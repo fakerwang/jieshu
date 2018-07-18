@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>店铺头条</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+</head>
+<body>
+
+<div class="page ng-scope">
+    <div class="mainbox clearfix bg-f5 pad-b70 ng-scope">
+        <!--面包屑-->
+        <div class="mbx-navbox">
+            <div class="mbx-nav">
+                <div class="mbx-nav-l"><a href="#/">首页</a><a href="javascript:;">店铺头条</a></div>
+            </div>
+        </div>
+        <!---->
+        <div class="box fenlei2 clearfix">
+            <ul>
+                <li><label>分类</label><p><span class="act" ng-click="fxhhlist('exact',1)" tab="">动态</span><span ng-click="fxhhlist('album',1)" tab="" class="">热门</span></p></li>
+            </ul>
+        </div>
+        <div class="sssj-dp-listbox box clearfix dptt-listbox">
+            <div class="sssj-dp-list clearfix ng-scope" id="m1">
+                <div class="tit ng-scope" ng-if="delshow==1">猜你喜欢<span ng-click="dpttdel(tt.merchants_id)">×</span></div>
+                <div class="s-d-l-left">
+                    <div class="dp-center">
+                        <ul>
+                            <li class="sdl-l-1of5"><img ng-src="../../images/1483448955139.png" src="../../images/1483448955139.png"></li>
+                            <li class="sdl-l-2of5 ng-binding"><label>店铺名：</label>沃鎏波洱</li>
+                            <li class="sdl-l-3of5 ng-binding"><label>综合评分：</label>10.00</li>
+                            <li class="sdl-l-4of5 mar-b20 ng-binding"><label>店铺简介：</label>沃鎏波洱电商平台自营店</li>
+                            <li class="sdl-l-5of5">销量：<span class="blue ng-binding">10000</span><span class="mar-l20">共<span class="blue ng-binding">2355304</span>件商品</span></li>
+                            <li class="sdl-l-6of5"><a href="#/dianpu?mid=1">进入店铺</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

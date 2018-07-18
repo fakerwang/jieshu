@@ -1,0 +1,265 @@
+<!--加入我们-->
+<div class="page ng-scope">
+    <div class="mainbox bg-f5 clearfix pad-b70 pad-t40 ng-scope">
+        <div class="box">
+
+            <!--左侧服务-->
+            <div class="main-leftbox nav3">
+
+
+                <div class="nav3-list ng-scope" ng-class="{act:$index==bzzxact2}" ng-repeat="fs in footer">
+                    <span class="act ng-binding" dbclick2="">买家服务</span>
+                    <ul>
+                        <li class="act2 ng-scope" val="192" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="gwzn.html"tit=购物指南 class="ng-binding">购物指南</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="193" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="pssm.html"tit=配送服务 class="ng-binding">配送服务</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide">
+                                <li val="227" ng-class="{act:fs2.html_id==bzzxact}" ng-repeat="fs2 in fs1.htmlBeans" class="ng-scope">
+                                    <a href="pssm.html" tit=配送说明 class="ng-binding">配送说明</a></li>
+                                <li val="228" ng-class="{act:fs2.html_id==bzzxact}" ng-repeat="fs2 in fs1.htmlBeans" class="ng-scope">
+                                    <a href="qssm.html" tit=签收说明 class="ng-binding">签收说明</a></li>
+                                <li val="229" ng-class="{act:fs2.html_id==bzzxact}" ng-repeat="fs2 in fs1.htmlBeans" class="ng-scope">
+                                    <a href="psyc.html"tit=配送异常 class="ng-binding">配送异常</a></li>
+                                <li val="230" ng-class="{act:fs2.html_id==bzzxact}" ng-repeat="fs2 in fs1.htmlBeans" class="ng-scope">
+                                    <a href="thhgz.html"tit=退换货规则 class="ng-binding">退换货规则</a></li>
+                                <li val="231" ng-class="{act:fs2.html_id==bzzxact}" ng-repeat="fs2 in fs1.htmlBeans" class="ng-scope">
+                                    <a href="yfsm.html"tit=运费说明 class="ng-binding">运费说明</a></li>
+                            </ul>
+                        </li>
+                        <li class="act2 ng-scope" val="194" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="zffw.html"tit=支付服务 class="ng-binding">支付服务</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="195" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="mjcjwt.html"tit=常见问题 class="ng-binding">常见问题</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav3-list ng-scope" ng-class="{act:$index==bzzxact2}" ng-repeat="fs in footer">
+                    <span class="act ng-binding" dbclick2="">商家服务</span>
+                    <ul>
+                        <li class="act2 ng-scope " val="197" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="sjzz.html"tit=商家资质 class="ng-binding">商家资质</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="198" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="rzzn.html"tit=入驻指南 class="ng-binding">入驻指南</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="199" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="sjsz.html"tit=商家守则 class="ng-binding">商家守则</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="200" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="cjwt.html"tit=常见问题 class="ng-binding">常见问题</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav3-list ng-scope " ng-class="{act:$index==bzzxact2}" ng-repeat="fs in footer">
+                    <span class="act ng-binding" dbclick2="">战略合作</span>
+                    <ul>
+                        <li class="act2 ng-scope" val="197" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="sjrz.html" tit=商家入驻 class="ng-binding">商家入驻</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="198" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="hzhb.html" tit=合作伙伴 class="ng-binding">合作伙伴</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope " val="199" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="wdjm.html" tit=网点加盟 class="ng-binding">网点加盟</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav3-list ng-scope " ng-class="{act:$index==bzzxact2}" ng-repeat="fs in footer">
+                    <span class="act ng-binding" dbclick2="">快捷查询</span>
+                    <ul>
+                        <li class="act2 ng-scope" val="197" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="cxhd.html" tit=活动促销 class="ng-binding">活动促销</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="198" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="qygsq.html" tit=企业购申请 class="ng-binding">企业购申请</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="199" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="xyfsq.html" tit=信用付申请 class="ng-binding">信用付申请</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav3-list ng-scope act" ng-class="{act:$index==bzzxact2}" ng-repeat="fs in footer">
+                    <span class="act ng-binding" dbclick2="">关于我们</span>
+                    <ul>
+                        <li class="act2 ng-scope" val="197" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="gsjj.html" tit=公司简介 class="ng-binding">公司简介</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope " val="197" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="lxwm.html" tit=联系我们 class="ng-binding">联系我们</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope act" val="198" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="jrwm.html" tit=加入我们 class="ng-binding">加入我们</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="199" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="ystl.html" tit=隐私条例 class="ng-binding">隐私条例</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!--右侧 联系我们-->
+            <div class="main-rightbox jianjie" style="padding:0px;">
+                <div class="bzzx-box bg-fff pad30 ">
+                    <div class="dd-tit ng-binding">加入我们</div>
+                    <div class="center ng-binding">
+                        <h2 style="margin-top:4px;margin-right:0;margin-bottom:30px;margin-left:0;text-align:center;font-size: 24px;">社会招聘</h2>
+                        <h3 class="jrwm-bt">市场经理</h3>
+                        <p class="work"><span>职位月薪：15-20k</span><span class="mar-l90">工作地点：上海</span></p>
+                        <p class="work"><span>发布日期：2017-08-07</span><span class="mar-l90">工作性质：全职</span></p>
+                        <p class="work"><span>工作经验：3年以上 </span><span class="mar-l90">学历：本科以上</span></p>
+                        <p class="work"><span>招聘人数：1人  </span><span class="mar-l90">职位类别：市场经理</span></p>
+                        <p class="work">职位描述：</p>
+                        <p class="work">岗位职责：</p>
+                        <p class="work-nr">1、实时了解、整理公司业务发展、渠道开拓等方面的信息，供部门分析使用；
+                            <br>2、根据需要，指导各公司渠道合作，联合营销客户、设计结合培训服务的综合解决方案，带动公司相关业务发展；
+                            <br>3、针对市场份额、产品发展做调研、分析，同时确定品牌营销方案；
+                            <br>4、与公司内部其他部门沟通，就公司项目进行营销模式与策略的对接，资源信息的分享共建，协助其他部门的市场工作；
+                            <br>5、整合营销渠道各地区相关政策、渠道信息等，联合区域代理商经销商，开拓建立地区市场的代理渠道；
+                            <br>6、维护好现有合作商，寻找潜在合作伙伴</p>
+                        <p class="work">任职要求：</p>
+                        <p class="work-nr">1、年龄：26-35岁，本科以上学历，英语熟练者优先，至少3年以上同行业工作经验（熟悉生命科学领域产品市场）；
+                            <br>2、具有敏锐的市场意识和较强的商务谈判能力，分析问题及解决问题能力强，具有优秀的资源整合能力、业务推进能力及团队管理能力；
+                            <br>3、擅长市场调查、情报收集和市场策略制定，对产品、价格、渠道及品牌打造、客户服务、市场监管等专业工作有系统整合能力；
+                            <br>4、具有战略思维、认同生物医学发展方向，乐于挑战，具有创新意识。
+                            <br>5、愿意接受公司股权激励的优秀热血青年优先。</p>
+                        <h3 class="jrwm-bt">招商经理</h3>
+                        <p class="work"><span>职位月薪：8-15k</span><span class="mar-l90">工作地点：上海</span></p>
+                        <p class="work"><span>发布日期：2017-08-07</span><span class="mar-l90">工作性质：全职</span></p>
+                        <p class="work"><span>工作经验：3年以上 </span><span class="mar-l90">学历：本科以上</span></p>
+                        <p class="work"><span>招聘人数：5人  </span><span class="mar-l90">职位类别：招商经理</span></p>
+                        <p class="work">职位描述：</p>
+                        <p class="work">岗位职责：</p>
+                        <p class="work-nr">1、负责招商工作和开发客户，完成每月招商部下达的招商任务，负责招商、记录客户档案、整理客户资料，负责客户定期拜访、回访客户, 并及时反映客户问题；
+                            <br>2、做好市场调研、客户分析工作并及时反应市场信息；　　
+                            <br>3、协助公司主管部门做好疑难客户的处理工作，协助完成各种招商说明会及推荐会等活动的召开举行，协助财务部完成客户的签约及收款；　
+                            <br>4、负责每日客户接待,认真讲解招商政策，回答客户疑问；
+                            <br>5、完成招商工作，积累客户并建立客户档案。</p>
+                        <p class="work">任职要求：</p>
+                        <p class="work-nr">1、全日制本科以上，三年以上招商管理经验，生物学专业优先，英语语言能力强者优先；　
+                            <br>2、具有丰富的商业管理经验，有成功招商、谈判经验或成功案例，熟悉外资品牌的工作程序及特点；　　
+                            <br>3、具有良好的职业道德和敬业精神；　　
+                            <br>4、具备较为丰富的商业资源并广泛运用的能力；　　
+                            <br>5、具有良好的执行能力、管理能力；　　
+                            <br>6、具备吃苦耐劳精神和勤奋的品质，表率性强，责任心强，善于带领团队工作。</p>
+                        <h3 class="jrwm-bt">高级JAVA工程师</h3>
+                        <p class="work"><span>职位月薪：17-25k</span><span class="mar-l90">工作地点：上海</span></p>
+                        <p class="work"><span>发布日期：2017-08-07</span><span class="mar-l90">工作性质：全职</span></p>
+                        <p class="work"><span>工作经验：5年以上 </span><span class="mar-l90">学历：本科以上</span></p>
+                        <p class="work"><span>招聘人数：1人  </span><span class="mar-l90">职位类别：高级软件工程师</span></p>
+                        <p class="work">职位描述：</p>
+                        <p class="work">岗位职责：</p>
+                        <p class="work-nr">1 、扎实的Java编程基础；
+                            <br>2、对各种开源的框架如Spring、ibatis、mybatis、dubbo，消息中间件，redis， Memcache等有深入的了解，对框架本身有过开发或重构者可优先考虑；
+                            <br>3、具备良好的识别和设计通用框架及模块的能力，具备系统调优、性能调优等技能，对疑难技术问题具备较强的排查能力；
+                            <br>4、对技术有激情，喜欢钻研，能快速接受和掌握新技术，有较强的独立、主动的学习能力，良好的沟通表达能力和团队协作能力；
+                            <br>5、有大型网站高性能电商优化的经验优先；
+                            <br>6 、有一定的产品设计能力可以加分。</p>
+                        <p class="work">任职要求：</p>
+                        <p class="work-nr">1、负责电商系统设计和编码， 优化现有的代码；
+                            <br>2、主导技术难题攻关，持续提升核心系统在高并发、海量请求数下的高处理性能，保证系统的安全、稳定、快速运行；
+                            <br>3、理解业务，识别需求，参与架构、系统、分析设计等多领域项目的相关技术的实践、应用和研发，负责产品线系统的规划设计，制定产品线的技术发展计划；
+                            <br> 4、审核指导开发人员的系统设计和代码质量，书写技术文档和制定开发规范；
+                            <br>5、搭建日志，监控等运维工具。</p>
+                        <h3 class="jrwm-bt">销售经理</h3>
+                        <p class="work"><span>职位月薪：15-20k</span><span class="mar-l90">工作地点：上海</span></p>
+                        <p class="work"><span>发布日期：2017-08-07</span><span class="mar-l90">工作性质：全职</span></p>
+                        <p class="work"><span>工作经验：1-3年  </span><span class="mar-l90">学历：本科以上</span></p>
+                        <p class="work"><span>招聘人数：5人  </span><span class="mar-l90">职位类别：销售经理</span></p>
+                        <p class="work">职位描述：</p>
+                        <p class="work">岗位职责：</p>
+                        <p class="work-nr">1、负责区域内的客户开发与维护，收集销售订单，完成销售指标；
+                            <br>2、有一定的市场意识，反应敏捷，较好的沟通能力；　　
+                            <br>3、协助市场部完成主要品牌的推广工作，及时反馈市场信息；　
+                            <br>4、根据公司市场营销战略，提升销售价值，控制成本，扩大产品在所负责区域的销售，积极完成销售量指标，扩大产品市场占有率；
+                            <br>5、收集同行信息、竞品信息、客户信息、产品反馈信息；
+                            <br>6、定期做工作总结，以及完成领导安排的其他工作</p>
+                        <p class="work">任职要求：</p>
+                        <p class="work-nr">1、生物工程、生命科学、医学、食品安全相关专业本科及以上学历优先；
+                            <br>2、有强烈意愿从事销售工作，能承受一定的工作压力；
+                            <br>3、口齿清晰，性格开朗，做事主动积极，有学习发展的愿望；
+                            <br>4、具有良好的沟通能力和团队协作精神，诚信正直，责任心强；
+                            <br>5、有试剂等相关销售经验者优先。</p>
+                        <h3 class="jrwm-bt">销售专员</h3>
+                        <p class="work"><span>职位月薪：10-15k</span><span class="mar-l90">工作地点：上海</span></p>
+                        <p class="work"><span>发布日期：2017-08-07</span><span class="mar-l90">工作性质：全职</span></p>
+                        <p class="work"><span>工作经验：不限 </span><span class="mar-l90">学历：本科以上</span></p>
+                        <p class="work"><span>招聘人数：10人  </span><span class="mar-l90">职位类别：销售专员</span></p>
+                        <p class="work">职位描述：</p>
+                        <p class="work">岗位职责：</p>
+                        <p class="work-nr">1、负责区域内的客户开发与维护，收集销售订单，完成销售指标；
+                            <br>2、有一定的市场意识，反应敏捷，较好的沟通能力；　　
+                            <br>3、协助市场部完成主要品牌的推广工作，及时反馈市场信息；　
+                            <br>4、根据公司市场营销战略，提升销售价值，控制成本，扩大产品在所负责区域的销售，积极完成销售量指标，扩大产品市场占有率；
+                            <br>5、收集同行信息、竞品信息、客户信息、产品反馈信息；
+                            <br>6、定期做工作总结，以及完成领导安排的其他工作</p>
+                        <p class="work">任职要求：</p>
+                        <p class="work-nr">1、生物工程、生命科学、医学、食品安全相关专业本科及以上学历优先；
+                            <br>2、有强烈意愿从事销售工作，能承受一定的工作压力；
+                            <br>3、口齿清晰，性格开朗，做事主动积极，有学习发展的愿望；
+                            <br>4、具有良好的沟通能力和团队协作精神，诚信正直，责任心强；
+                            <br>5、有试剂等相关销售经验者优先。</p>
+                        <h3 class="jrwm-bt">技术支持经理</h3>
+                        <p class="work"><span>职位月薪：7-8.5k </span><span class="mar-l90">工作地点：上海</span></p>
+                        <p class="work"><span>发布日期：2017-08-07</span><span class="mar-l90">工作性质：全职</span></p>
+                        <p class="work"><span>工作经验：不限 </span><span class="mar-l90">学历：研究生以上（限生物学专业）</span></p>
+                        <p class="work"><span>招聘人数：若干  </span><span class="mar-l90">职位类别：技术支持经理</span></p>
+                        <p class="work">职位描述：</p>
+                        <p class="work">岗位职责：</p>
+                        <p class="work-nr">1. 解答客户售前、售后的技术问题；
+                            <br>2. 编辑产品的说明书、技术依据、结果数据等文档（含英文）；
+                            <br>3. 负责内部员工的产品知识、专业技能培训；
+                            <br>4. 参与公司产品的市场推广活动，主持技术讲座、展会的技术咨询等；
+                            <br>5. 与研发部、市场部、销售部进行信息交流、了解产品投入市场的信息。</p>
+                        <p class="work">任职要求：</p>
+                        <p class="work-nr">1. 生物工程、分子生物学、细胞生物学、免疫学等生命科学相关专业，硕士学历（有NGS经验者优先）；
+                            <br>2. 有丰富的实验理论与操作经验，尤其在分子生物学、细胞实验、动物实验、重组蛋白、抗体等方面有相关的研究背景；
+                            <br>3. 熟悉细胞生物学、免疫学、药理学、靶点、信号通路等方面的内容；
+                            <br>4. 兼具独立分析能力和团队合作能力，善于沟通协调和解决实际问题；
+                            <br>5. 英语基础好，能流利阅读、翻译英文科技文献，较好的口语能力。</p>
+                        <h3 class="jrwm-bt">送货员</h3>
+                        <p class="work"><span>职位月薪：3-5k </span><span class="mar-l90">工作地点：上海</span></p>
+                        <p class="work"><span>发布日期：2017-08-07</span><span class="mar-l90">工作性质：全职</span></p>
+                        <p class="work"><span>工作经验：不限 </span><span class="mar-l90">学历：中专及以上 </span></p>
+                        <p class="work"><span>招聘人数：10人  </span><span class="mar-l90">职位类别：预订员</span></p>
+                        <p class="work">职位描述：</p>
+                        <p class="work">岗位职责：</p>
+                        <p class="work">负责上海个区域内的送单业务，准时、安全、高效</p>
+                        <p class="work">任职要求：</p>
+                        <p class="work-nr">1.     熟练驾驶电动车、熟练驾驶汽车者优先；
+                            <br>2.     阳光、健康，身高1.63m以上；能搬重45kg.
+                            <br>3.     薪资待遇：基本薪资3000+送单业绩提成（300件以上每单10元提成）+年终奖金。</p>
+                        <p class="work-di"><strong>在这里  你有更多可能！</strong> </p>
+                        <p class="work-di"><strong>简历请投valubio_hr@163.com</strong></p><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>

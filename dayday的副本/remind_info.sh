@@ -1,0 +1,1 @@
+ curl -g 'http://daylive.tstmobile.com/api/Cli/remind_info'

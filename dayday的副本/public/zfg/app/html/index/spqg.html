@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品求购</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+</head>
+<body style="background: #F5F5F5;">
+<!--头部-->
+<div class="other_header ng-scope" style="width:960px;height:90px;margin:0 auto;padding:10px 0px; ">
+    <div class="logo_picture" style="width:288px;height:58px;float:left;">
+        <a href="../index/home.html" ng-click="foward()"><img src="../../images/new_homelogo.png"></a>
+    </div>
+    <a href="index.html#/" ng-click="foward()"></a>
+    <div class="back_index" style="float:right;height:100%;line-height:58px;text-align: center;color:#4DA0F3">
+        <a href="index.html#/" ng-click="foward()"></a><a href="../index/home.html" style="color:#4DA0F3">返回首页</a>
+    </div>
+</div>
+        <div class="page ng-scope" ng-view="" style="">
+            <div class="clearfix huodong ng-scope">
+                <div style="width:960px;height:80px;text-align:center;background:#4DA0F3;margin:0 auto;line-height:80px;color:#fff;font-size:20px;">商品求购</div>
+                <div class="con_box" style="width:960px;min-height:400px;padding-bottom:20px;">
+                    <table style="margin:0 auto;" class="tab">
+                        <tbody><tr>
+                            <td class="td1"><span>*</span>姓名</td>
+                            <td class="td2"><input type="text" placeholder="请填写您的真实姓名" id="name"></td>
+                        </tr>
+                        <tr>
+                            <td class="td1">单位</td>
+                            <td class="td2"><input type="text" placeholder="请填写您的单位名称" id="unit"></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><span>*</span>电话</td>
+                            <td class="td2"><input type="text" placeholder="请填写固定电话或移动电话" id="phone"></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><span>*</span>邮箱</td>
+                            <td class="td2"><input type="text" placeholder="请填写您的邮箱地址" id="email"></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><span>*</span>商品品牌</td>
+                            <td class="td2"><input type="text" placeholder="请您尽可能填写完整" id="brand"></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><span>*</span>商品货号</td>
+                            <td class="td2"><input type="text" placeholder="请填写正确货号" id="goodnum"></td>
+                        </tr>
+                        <tr>
+                            <td class="td1">商品名称</td>
+                            <td class="td2"><input type="text" placeholder="请您尽可能填写完整" id="goodname"></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><span>*</span>规格</td>
+                            <td class="td2"><input type="text" placeholder="商品规格" id="size"></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><span>*</span>数量</td>
+                            <td class="td2"><input type="text" placeholder="请填写需求数量" id="num"></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><span>*</span>到货时间</td>
+                            <td class="td2"><input type="text" placeholder="请填写正确日期" id="date" onclick="WdatePicker()"></td>
+                        </tr>
+                        <tr>
+                            <td class="td1" style="padding-bottom:0px;height:0px;line-height:0px;"><span style="position:relative;top:-65px;left:0px;color:#666666">备注信息</span></td>
+                            <td class="td2" style="padding-bottom:0px;height:0px;line-height:0px;"><textarea type="text" placeholder="可填写特殊需求" id="tips"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td style="height:10px;line-height:10px;"></td>
+                            <td style="height:10px;line-height:10px;font-size:12px;color:#666666;">"<span style="color:red;">*</span>"号为必填</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="ok">
+                        <span style="float:left;background:#4DA0F3;color:#fff" ng-click="sure()">确认</span>
+                        <span style="float:right;color:#666;" ng-click="backward()">返回</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer ng-scope">
+            <div class="copy">版权所有©<a target="_blank" href="http://www.miitbeian.gov.cn">沪ICP备17003666号</a></div>
+        </div>
+
+</body>
+</html>

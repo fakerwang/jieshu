@@ -1,0 +1,111 @@
+<div class="liveRoom_warp">
+	<div class="liveRoom_app box_direction over_hidden">
+		<div class="grid_cell p_r">
+			<section class="liveRoom_touch p_a t0 l0 b0 w_b100">
+				<!-- banner -->
+				<div class="h375 w_b100 p_r">
+					<div class="flexsliders h375">
+						<ul class="slides h375">
+							<li class="h_b100" ng-repeat="item in goodsInfo.imgs" repeat-finish="flexsliders('.flexsliders')">
+								<a href="JavaScript:void(0)" class="dis_in h_b100 w_b100">
+									<img ng-src="{{item}}"/>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 商品信息 -->
+				<div class="p10 back_fff">
+					<div class="f14" ng-bind="goodsInfo.goods_name"></div>
+					<div class="f14 pt5">
+						<span class="col_red">现价：¥<em class="f18" ng-bind="goodsInfo.goods_now_price"></em></span>
+						<span class="col_999 scx f12">原价：¥<em ng-bind="goodsInfo.goods_origin_price"></em></span>
+					</div>
+					<div class="box_between f12 col_666 pt5">
+						<div>库存<em ng-bind="goodsInfo.goods_stock"></em></div>
+						<div>已售<em ng-bind="goodsInfo.total_sales"></em></div>
+						<div></div>
+					</div>
+				</div>
+				<!-- 保证 -->
+				<div class="box_start back_fff bor_t h40 f14 pl10 pr10">
+					<div class="box_start mr10">
+						<div class="ensure_icon w22 h22 mr5"></div>正品保证
+					</div>
+					<div class="box_start mr10">
+						<div class="ensure_icon w22 h22 mr5"></div>微信支付
+					</div>
+				</div>
+				<!-- 商品详情 -->
+				<div class="mt10">
+					<!-- title -->
+					<div class="box_center h40 back_fff f16">- 商品详情 -</div>
+					<div ng-bind-html="goods_detail"></div>
+				</div>
+			</section>
+		</div>
+		<div class="w_b100 box_between bor_t back_fff h40">
+			<div class="grid_cell box_center f14 h40">
+				<div class="grid_cell box_center">
+					<div>
+						客服
+					</div>
+				</div>
+				<div class="w1 h_b50 back_ccc"></div>
+				<div class="grid_cell box_center">
+					<div>收藏</div>
+				</div>
+			</div>
+			<div class="grid_cell box_between f14 col_fff">
+				<div class="grid_cell box_center h40 back_a93c5f" ng-click="specificationModelClick(1,'cart')">加入购物车</div>
+				<div class="grid_cell box_center h40 back_red" ng-click="specificationModelClick(1,'pay')">立即购买</div>
+			</div>
+		</div>
+	</div>
+	<!-- 这下面写fixed定位元素 -->
+	<!-- header -->
+	<header class="p_f t0 l0 w_b100 z102 pl10 pr10 backRgba_black_5">
+		<div class="box_between h45">
+			<div class="left_white_icon w22 h28" ng-click="backFun()"></div>
+			<div class="grid_cell"></div>
+			<div class=""></div>
+		</div>
+	</header>
+	<!-- 规格 model -->
+	<div class="hide" id="specificationBox">
+		<div class="mk" ng-click="specificationModelClick(2)"></div>
+		<div class="specBox p_f b0 l0 w_b100 back_fff z101">
+			<div class="pl15 pr15 pb20">
+				<div class="p_r box_start h90">
+					<div class="w100"></div>
+					<div class="f12 ml10">
+						<div><em class="col_red f16">￥<em ng-bind="specInfo.specification_price"></em></em></div>
+						<div class="col_999 pt5 pb5">库存<em ng-bind="specInfo.specification_stock"></em>件</div>
+						<div class="col_999" ng-bind="specInfo.specification_names"></div>
+					</div>
+					<div class="p_a w100 h100 t_f10 l0 p3 back_fff br3">
+						<img ng-src="{{goodsInfo.goods_img}}" alt="" />
+					</div>
+					<div class="p_a t10 r0 w30 h30 close_red_icon" ng-click="specificationModelClick(2)"></div>
+				</div>
+				<div class="mt20 bor_b pb5" ng-repeat="specBeans in goodsInfo.goodsSpecificationBeans track by $index">
+					<div class="f14 h22 mb10" ng-bind="specBeans.specification_value"></div>
+					<div class="box_start flex_wrap f12">
+						<div class="h30 pl15 pr15 br15 box_center back_ mr10 mb10 bor" ng-repeat="spec in specBeans.specificationBeans" ng-bind="spec.specification_value" ng-class="{specItem_act:spec.specification_id == specObj.paIdArr[$parent.$index]}" ng-click="specOption(spec.specification_id,spec.specification_value,$parent.$index)"></div>
+					</div>
+				</div>
+				<div class="mt10 mb10 box_between f14">
+					<div>选择购买数量：</div>
+					<div class="box_center">
+						<div class="w22 h22 back_ccc box_center" ng-click="numberfn(gmnum,specInfo.specification_stock,1)">-</div>
+						<div class="w40 h22 box_center">
+							<input readonly ng-model="gmnum" ng-change="numberfn(gmnum,specInfo.specification_stock)" class="w_b100 h20 t_c" type="text">
+						</div>
+						<div class="w22 h22 back_ccc box_center" ng-click="numberfn(gmnum,specInfo.specification_stock,2)">+</div>
+					</div>
+				</div>
+			</div>
+			<div class="box_center h45 col_fff back_red f16" ng-click="determineFun('pay')">确定</div>
+		</div>
+	</div>
+</div>

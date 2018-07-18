@@ -1,0 +1,77 @@
+<!--品牌馆-->
+
+<div class="page ng-scope">
+    <div class="mainbox clearfix bg-f5 pad-b70 ng-scope">
+        <!--面包屑-->
+        <div class="mbx-navbox">
+            <div class="mbx-nav">
+                <div class="mbx-nav-l"><a href="#/">首页</a><a href="javascript:;">品牌馆</a></div>
+            </div>
+        </div>
+        <!---->
+        <div class="box clearfix  pinpai" style="margin-top:10px;">
+            <div class="main-rightbox" style="width:1198px;">
+                <div class="clearfix  pinpai">
+                    <div class="sj-r-list sjx ng-scope" ng-repeat="pp in shoppinpais" style="height: 190px;">
+                        <a style="width:230px;height:190px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/pinpai?bid=293"></a>
+                        <ul>
+                            <li class="sj-l-1of6" style="height:125px"><img ng-src="../../images/1510210165425.png" src="../../images/1510210165425.png" style="width: 100px;height: 80px;"></li>
+                            <li class="sj-l-3of6 ng-binding" style="margin-top:15px;" ng-bind-html="pplistHtml[$index]">AAT Bioquest</li>
+                        </ul>
+                    </div>
+                    <div class="sj-r-list sjx ng-scope" ng-repeat="pp in shoppinpais" style="height: 190px;">
+                        <a style="width:230px;height:190px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/pinpai?bid=293"></a>
+                        <ul>
+                            <li class="sj-l-1of6" style="height:125px"><img ng-src="../../images/1510210165425.png" src="../../images/1510210165425.png" style="width: 100px;height: 80px;"></li>
+                            <li class="sj-l-3of6 ng-binding" style="margin-top:15px;" ng-bind-html="pplistHtml[$index]">AAT Bioquest</li>
+                        </ul>
+                    </div>
+                    <div class="sj-r-list sjx ng-scope" ng-repeat="pp in shoppinpais" style="height: 190px;">
+                        <a style="width:230px;height:190px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/pinpai?bid=293"></a>
+                        <ul>
+                            <li class="sj-l-1of6" style="height:125px"><img ng-src="../../images/1510210165425.png" src="../../images/1510210165425.png" style="width: 100px;height: 80px;"></li>
+                            <li class="sj-l-3of6 ng-binding" style="margin-top:15px;" ng-bind-html="pplistHtml[$index]">AAT Bioquest</li>
+                        </ul>
+                    </div>
+                    <div class="sj-r-list sjx ng-scope" ng-repeat="pp in shoppinpais" style="height: 190px;">
+                        <a style="width:230px;height:190px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/pinpai?bid=293"></a>
+                        <ul>
+                            <li class="sj-l-1of6" style="height:125px"><img ng-src="../../images/1510210165425.png" src="../../images/1510210165425.png" style="width: 100px;height: 80px;"></li>
+                            <li class="sj-l-3of6 ng-binding" style="margin-top:15px;" ng-bind-html="pplistHtml[$index]">AAT Bioquest</li>
+                        </ul>
+                    </div>
+                    <div class="sj-r-list sjx ng-scope" ng-repeat="pp in shoppinpais" style="height: 190px;">
+                        <a style="width:230px;height:190px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/pinpai?bid=293"></a>
+                        <ul>
+                            <li class="sj-l-1of6" style="height:125px"><img ng-src="../../images/1510210165425.png" src="../../images/1510210165425.png" style="width: 100px;height: 80px;"></li>
+                            <li class="sj-l-3of6 ng-binding" style="margin-top:15px;" ng-bind-html="pplistHtml[$index]">AAT Bioquest</li>
+                        </ul>
+                    </div>
+                    <div class="sj-r-list sjx ng-scope" ng-repeat="pp in shoppinpais" style="height: 190px;">
+                        <a style="width:230px;height:190px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/pinpai?bid=293"></a>
+                        <ul>
+                            <li class="sj-l-1of6" style="height:125px"><img ng-src="../../images/1510210165425.png" src="../../images/1510210165425.png" style="width: 100px;height: 80px;"></li>
+                            <li class="sj-l-3of6 ng-binding" style="margin-top:15px;" ng-bind-html="pplistHtml[$index]">AAT Bioquest</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--分页-->
+        <div class="page-box box ng-binding ng-scope" ng-if="pageNum>1" style="">
+            <a href="javascript:;" ng-click="pageclick(nowpageNum-1)">上一页</a>
+            <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope act">1</span>
+            <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">2</span>
+            <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">3</span>
+            <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">4</span>
+            <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">5</span>
+            <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">6</span>
+            <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">7</span>
+            <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">8</span>
+            <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">9</span>
+            <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">10</span>
+            <a class="act" href="javascript:;" ng-click="pageclick(nowpageNum*1+1)">下一页</a>
+            跳到<input type="number" ng-model="nowpageNum2" width="20px;" class="ng-pristine ng-untouched ng-valid ng-not-empty">/4页<button ng-click="pageclick(nowpageNum2)">确定</button>
+        </div>
+    </div>
+</div>

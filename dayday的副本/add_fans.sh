@@ -1,0 +1,1 @@
+curl -g 'http://dspx1.tstmobile.com/api/cli/add_fans'

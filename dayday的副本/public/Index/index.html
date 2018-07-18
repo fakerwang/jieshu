@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta charset="UTF-8">
+    <meta property="wb:webmaster" content="50ad9fbbafab8daf" />
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon"/>
+    <title>百台云直播</title>
+    <link rel="stylesheet" href="lmLive/css/style.css">
+    <link rel="stylesheet" href="lmLive/css/Smian.css">
+    <link rel="stylesheet" href="lmLive/css/html5uploader.css">
+    <!--jquery-->
+    <!-- <script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.js"></script> -->
+    <script src="lmLive/js/jquery.js"></script>
+    <script src="http://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <!--日期选择插件-->
+    <script src="lmLive/js/birthday.js"></script>
+    <!--地址控件-->
+    <script src="lmLive/js/region_select.js"></script>
+    <!--上传插件-->
+    <script src='lmLive/js/jquery.html5uploader.js'></script>
+    <!-- QQ登录 -->
+    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101404567" data-redirecturi="http://www.longmaitv.com" charset="utf-8"></script>
+    <!--微博登录-->
+    <!--<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=3673074369" type="text/javascript" charset="utf-8"></script>-->
+</head>
+<body ng-controller="mainCtrl">
+    <div ng-include="'lmLive/views/template/header.html'"></div>
+    <div ng-view></div>
+    <!--登录弹框-->
+    <div class="loginPopupBox hide">
+        <!--遮罩层-->
+        <div class="mk"></div>
+        <div class="login back_fff p_f z100">
+            <div class="popupTop">
+                <div class="f22 fl">登录龙脉直播</div>
+                <div class="fr f28 shou" closelogin>&times;</div>
+            </div>
+            <div class="popupContent">
+                <div class="popupRow">
+                    <input ng-model="loginPhone" class="rowInput1 back_f6 pl5" type="text" placeholder="请输入手机号" />
+                </div>
+                <div class="popupRow mt20">
+                    <input ng-model="loginCode" class="rowInput2 back_f6 pl5" type="text" placeholder="请输入验证码" /><button id="loginCode" class="row_code_btn back_4cce4b col_fff f16 fr shou" ng-click="obtainCode()">获取验证码</button>
+                </div>
+                <p class="errorPrompt col_red f12"><span ng-bind="errorPrompt"></span></p>
+                <div class="automaticBox mt10 mb10">
+                    <span ng-click="autoLogin(automatic)" ng-class="{true:'act',false:''}[automatic]" class="is_automatic fl mr10 shou"></span>
+                    <span class="f14">下次自动登录</span>
+                </div>
+                <div class="popup_btn back_4cce4b f20 col_fff mt30 shou" ng-click="login()">登&nbsp录</div>
+            </div>
+            <div class="popupBottom mt30">
+                <div class="f14 t_c">其它登录方式</div>
+                <div class="other_loginBox clearfix t_c mt10">
+                    <span class="other_login1 shou" ng-click="qqLogin()"></span>
+                    <span class="other_login2 shou" ng-click="wbLogin()"></span>
+                    <!-- <wb:share-button type="button" size="middle"> </wb:share-button> -->
+                    <span class="other_login3 shou" ng-click="wxLogin()"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--直播认证弹框-->
+    <div class="liveAutPopup hide">
+        <!--遮罩层-->
+        <div class="mk"></div>
+        <div class="pullBlack p_f z999 back_fff">
+            <div class="re_count_top back_4cce4b col_fff">
+                <div class="fl f16 ">提示</div>
+                <div class="fr f28 shou" ng-click="LiveAutClick(2)">&times;</div>
+            </div>
+            <div class="re_count_bot">
+                <div class="re_countRow mt20 t_c">
+                    <p class="pt10 pb10">请前往龙脉手机app上进行主播认证</p>
+                </div>
+                <div class="re_countRow mt20 mb20">
+                    <a href="http://www.longmaitv.com/index.php/home/index/web" class="re_c_btn t_c back_4cce4b f16 col_fff shou">前往下载</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--举报弹窗-->
+    <div class="reportPopup hide">
+        <!--遮罩层-->
+        <div class="mk"></div>
+        <div class="re_count p_f back_fff z100">
+            <div class="re_count_top back_4cce4b col_fff">
+                <div class="fl f16 ">举报</div>
+                <div class="fr f28 shou" ng-click="closeReport()">&times;</div>
+            </div>
+            <div class="re_count_bot">
+                <div class="re_countRow mt20 clearfix">
+                    <label class="fl f14">举报原因：</label>
+                    <div class="re_c_i">
+                        <span class="re_radio shou mr10 h30px lh30px" ng-repeat="type in reportTypeInfo" ng-bind="type.name" retab ng-click="getTypeName(type.name)"></span>
+                    </div>
+                </div>
+                <div class="re_countRow mt20 mb20 clearfix">
+                    <div class="re_c_btn t_c back_4cce4b f16 col_fff shou" ng-click="reportClick()">确定</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--angular-->
+    <script src="http://cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+    <script src="http://cdn.bootcss.com/angular.js/1.5.8/angular-cookies.min.js"></script>
+    <script src="http://cdn.bootcss.com/angular.js/1.5.8/angular-route.min.js"></script>
+    <script src="http://cdn.bootcss.com/angular.js/1.5.8/angular-touch.min.js"></script>
+    <script src="http://cdn.bootcss.com/angular.js/1.5.8/angular-animate.min.js"></script>
+    <!--chplayer.js-->
+    <script src="lmLive/chplayer/chplayer.js"></script>
+    <!--ckplayer.js-->
+    <script src="lmLive/ckplayer/ckplayer.js"></script>
+    <!--环信-->
+    <script src="lmLive/js/hx/webim.config.js"></script>
+    <script src="lmLive/js/hx/strophe-1.2.8.min.js"></script>
+    <script src='lmLive/js/hx/websdk-1.4.10.js'></script>
+    <!--导入/引入自己写的-->
+    <script src="lmLive/js/router.js"></script>
+    <script src="lmLive/js/main.js"></script>
+
+</body>
+</html>

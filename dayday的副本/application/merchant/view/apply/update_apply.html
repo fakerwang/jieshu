@@ -1,0 +1,331 @@
+{:widget('base/breadcrumbs',[
+[
+['href'=>url(''),'text'=>'场控列表'],
+['href'=>'','text'=>$text]
+]
+])}
+<div class="page-container">
+    <div id="big"></div>
+    <div id="big2"></div>
+    <form class="form form-horizontal" id="form" method="post">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>申请ID：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <span>{$data['apply_id']}</span>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>直播标题：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <span>{$data['title']}</span>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>选择场控：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <span class="select-box" style="width: 33%">
+                    <select name="anchor_id"  class="select">
+                        <option value="">请选择</option>
+                        {volist name="res" id="vo"}
+                            <option value="{$vo.anchor_id}" selected>{$vo.anchor_name}&nbsp&nbsp&nbsp{$vo.anchor_phone}</option>
+                        {/volist}
+                    </select>
+				</span>
+         </div>
+
+        </div>
+
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                <button  class="submit btn btn-primary radius"  type="button"><i class="Hui-iconfont">&#xe632;</i> 保存并提交</button>
+                <!--<button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存草稿</button>-->
+                <button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+            </div>
+        </div>
+    </form>
+</div>
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        var  content ;
+        KindEditor.ready(function(K) {
+            content = K.create('#content',{
+                allowFileManager : true,
+                uploadJson:"{:url('Tools/upload',['dirname'=>'banner'])}"
+            });
+        });
+
+        KindEditor.ready(function(K) {
+            K.create();
+            var editor = K.editor({
+                allowFileManager : true,
+                uploadJson:"{:url('Tools/upload',['dirname'=>'banner'])}"
+                //sdl:false
+            });
+            K('#logo').click(function() {
+                console.log(1);
+                editor.loadPlugin('image', function() {
+                    editor.plugin.imageDialog({
+                        imageUrl : K('#logo_img').val(),
+                        clickFn : function(url, title, width, height, border, align) {
+                            console.log(url);
+                            $('#logo').css('background-image','url('+url+')').css('background-size','220px 160px');
+                            K('#logo_url').val(url);
+                            // K('#getImgUrl').val(url);
+                            editor.hideDialog();
+                        }
+                    });
+                });
+            });
+
+            K('#uparea1').click(function() {
+                console.log(1);
+                editor.loadPlugin('image', function() {
+                    editor.plugin.imageDialog({
+                        imageUrl : K('#image_1').val(),
+                        clickFn : function(url, title, width, height, border, align) {
+                            console.log(url);
+                            $('#image1').css('background-image','url('+url+')').css('background-size','220px 160px');
+                            K('#image_1').val(url);
+                            // K('#getImgUrl').val(url);
+                            editor.hideDialog();
+                        }
+                    });
+                });
+            });
+
+            K('#uparea2').click(function() {
+                console.log(1);
+                editor.loadPlugin('image', function() {
+                    editor.plugin.imageDialog({
+                        imageUrl : K('#image_2').val(),
+                        clickFn : function(url, title, width, height, border, align) {
+                            console.log(url);
+                            $('#image2').css('background-image','url('+url+')').css('background-size','220px 160px');
+                            K('#image_2').val(url);
+                            // K('#getImgUrl').val(url);
+                            editor.hideDialog();
+                        }
+                    });
+                });
+            });
+
+            K('#uparea3').click(function() {
+                console.log(1);
+                editor.loadPlugin('image', function() {
+                    editor.plugin.imageDialog({
+                        imageUrl : K('#image_3').val(),
+                        clickFn : function(url, title, width, height, border, align) {
+                            console.log(url);
+                            $('#image3').css('background-image','url('+url+')').css('background-size','220px 160px');
+                            K('#image_3').val(url);
+                            // K('#getImgUrl').val(url);
+                            editor.hideDialog();
+                        }
+                    });
+                });
+            });
+
+            K('#uparea4').click(function() {
+                console.log(1);
+                editor.loadPlugin('image', function() {
+                    editor.plugin.imageDialog({
+                        imageUrl : K('#image_4').val(),
+                        clickFn : function(url, title, width, height, border, align) {
+                            console.log(url);
+                            $('#image4').css('background-image','url('+url+')').css('background-size','220px 160px');
+                            K('#image_4').val(url);
+                            // K('#getImgUrl').val(url);
+                            editor.hideDialog();
+                        }
+                    });
+                });
+            });
+
+            K('#uparea5').click(function() {
+                console.log(1);
+                editor.loadPlugin('image', function() {
+                    editor.plugin.imageDialog({
+                        imageUrl : K('#image_5').val(),
+                        clickFn : function(url, title, width, height, border, align) {
+                            console.log(url);
+                            $('#image5').css('background-image','url('+url+')').css('background-size','220px 160px');
+                            K('#image_5').val(url);
+                            // K('#getImgUrl').val(url);
+                            editor.hideDialog();
+                        }
+                    });
+                });
+            });
+            K('#uparea6').click(function() {
+                console.log(1);
+                editor.loadPlugin('image', function() {
+                    editor.plugin.imageDialog({
+                        imageUrl : K('#image_6').val(),
+                        clickFn : function(url, title, width, height, border, align) {
+                            console.log(url);
+                            $('#image6').css('background-image','url('+url+')').css('background-size','220px 160px');
+                            K('#image_6').val(url);
+                            // K('#getImgUrl').val(url);
+                            editor.hideDialog();
+                        }
+                    });
+                });
+            });
+
+            K('#uparea7').click(function() {
+                console.log(1);
+                editor.loadPlugin('image', function() {
+                    editor.plugin.imageDialog({
+                        imageUrl : K('#image_7').val(),
+                        clickFn : function(url, title, width, height, border, align) {
+                            console.log(url);
+                            $('#image7').css('background-image','url('+url+')').css('background-size','220px 160px');
+                            K('#image_7').val(url);
+                            // K('#getImgUrl').val(url);
+                            editor.hideDialog();
+                        }
+                    });
+                });
+            });
+
+            K('#uparea8').click(function() {
+                console.log(1);
+                editor.loadPlugin('image', function() {
+                    editor.plugin.imageDialog({
+                        imageUrl : K('#image_8').val(),
+                        clickFn : function(url, title, width, height, border, align) {
+                            console.log(url);
+                            $('#image8').css('background-image','url('+url+')').css('background-size','220px 160px');
+                            K('#image_8').val(url);
+                            // K('#getImgUrl').val(url);
+                            editor.hideDialog();
+                        }
+                    });
+                });
+            });
+
+        });
+
+        $(".submit").click(function(){
+            commonAjaxSubmit('','form');
+            return false;
+        });
+
+        $("#uparea1").mouseover(function(e){
+            $("#big").css({top:e.pageY,right:e.pageX});//鼠标定位一个点
+            var img = $('#image_1').val();
+            if(img.length !== 0) {
+                $("#big").html('<img src="' + $('#image_1').val() + '" width=380 height=300>');
+                $("#big").show();        //show：显示
+            }
+        });
+        $("#uparea1").mouseout(function(){
+            $("#big").hide();
+        });
+
+        $("#uparea2").mouseover(function(e){
+            $("#big").css({top:e.pageY,right:e.pageX});//鼠标定位一个点
+            var img = $('#image_2').val();
+            if(img.length !== 0) {
+                $("#big").html('<img src="' + $('#image_2').val() + '" width=380 height=300>');
+                $("#big").show();        //show：显示
+            }
+        });
+        $("#uparea2").mouseout(function(){
+            $("#big").hide();
+        });
+
+        $("#uparea3").mouseover(function(e){
+            $("#big").css({top:e.pageY,right:e.pageX});//鼠标定位一个点
+            var img = $('#image_3').val();
+            if(img.length !== 0) {
+                $("#big").html('<img src="' + $('#image_3').val() + '" width=380 height=300>');
+                $("#big").show();        //show：显示
+            }
+        });
+        $("#uparea3").mouseout(function(){
+            $("#big").hide();
+        });
+
+        $("#uparea4").mouseover(function(e){
+            $("#big").css({top:e.pageY,right:e.pageX});//鼠标定位一个点
+            var img = $('#image_2').val();
+            if(img.length !== 0) {
+                $("#big").html('<img src="' + $('#image_4').val() + '" width=380 height=300>');
+                $("#big").show();        //show：显示
+            }
+        });
+        $("#uparea4").mouseout(function(){
+            $("#big").hide();
+        });
+
+        $("#uparea5").mouseover(function(e){
+            $("#big").css({top:e.pageY,right:e.pageX});//鼠标定位一个点
+            var img = $('#image_5').val();
+            if(img.length !== 0) {
+                $("#big").html('<img src="' + $('#image_5').val() + '" width=380 height=300>');
+                $("#big").show();        //show：显示
+            }
+        });
+        $("#uparea5").mouseout(function(){
+            $("#big").hide();
+        });
+
+        $("#uparea6").mouseover(function(e){
+            $("#big").css({top:e.pageY,right:e.pageX});//鼠标定位一个点
+            var img = $('#image_6').val();
+            if(img.length !== 0) {
+                $("#big").html('<img src="' + $('#image_6').val() + '" width=380 height=300>');
+                $("#big").show();        //show：显示
+            }
+        });
+        $("#uparea6").mouseout(function(){
+            $("#big").hide();
+        });
+
+        $("#uparea7").mouseover(function(e){
+            $("#big").css({top:e.pageY,right:e.pageX});//鼠标定位一个点
+            var img = $('#image_7').val();
+            if(img.length !== 0) {
+                $("#big").html('<img src="' + $('#image_7').val() + '" width=380 height=300>');
+                $("#big").show();        //show：显示
+            }
+        });
+        $("#uparea7").mouseout(function(){
+            $("#big").hide();
+        });
+
+        $("#uparea8").mouseover(function(e){
+            $("#big").css({top:e.pageY,right:e.pageX});//鼠标定位一个点
+            var img = $('#image_8').val();
+            if(img.length !== 0) {
+                $("#big").html('<img src="' + $('#image_8').val() + '" width=380 height=300>');
+                $("#big").show();        //show：显示
+            }
+        });
+        $("#uparea8").mouseout(function(){
+            $("#big").hide();
+        });
+
+        $('.skin-minimal input').iCheck({
+            checkboxClass: 'icheckbox-blue',
+            radioClass: 'iradio-blue',
+            increaseArea: '20%'
+        });
+    });
+    function area_linke1(value){
+        $.post("{:url('Merchants/get_area')}", {value:value,type:1}, function(v){
+            $("#shi").html(v);
+        });
+    }
+    function area_linke2(value) {
+        $.post("{:url('Merchants/get_area')}", {value: value, type: 2}, function (v) {
+            $("#qu").html(v);
+        });
+    }
+
+
+
+</script>
+<!--/请在上方写此页面业务相关的脚本--><!--/请在上方写此页面业务相关的脚本-->

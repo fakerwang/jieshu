@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>猜你喜欢</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+</head>
+   <body>
+
+        <div class="page ng-scope">
+             <div class="mainbox clearfix bg-f5 pad-b70 ng-scope">
+                 <!--面包屑-->
+                 <div class="mbx-navbox">
+                     <div class="mbx-nav">
+                         <div class="mbx-nav-l"><a href="#/">首页</a><a href="javascript:;">猜你喜欢</a></div>
+                     </div>
+                 </div>
+
+                 <div class="box loading-box"></div>
+                 <div class="cnxh-listbox mar-t40 clearfix" style="margin-top:0px !important;">
+                     <div class="sj-r-list ng-scope" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                         <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                         <ul>
+                             <li class="sj-l-1of6"><img lazy-src="../../images/Labvision.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/Labvision.png" style="width: 200px;height: 133.33px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                             <li class="sj-l-2of6 ng-binding">Protease XXV for Enzyme-Induce</li>
+                             <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">Labvision</span></li>
+                             <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span></li>
+                             <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥133.7</span></li>
+                             <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">101</a></span></li>
+                         </ul>
+                     </div>
+                     <div class="sj-r-list ng-scope" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                         <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                         <ul>
+                             <li class="sj-l-1of6"><img lazy-src="../../images/MerckMillipore.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/MerckMillipore.png" style="width: 200px;height: 133.33px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                             <li class="sj-l-2of6 ng-binding">ONIX2 SOFTWARE USB MEMORY STICK</li>
+                             <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">Merck Millipore</span></li>
+                             <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span></li>
+                             <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥225</span></li>
+                             <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">436</a></span></li>
+                         </ul>
+                     </div>
+                     <div class="sj-r-list ng-scope" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                         <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                         <ul>
+                             <li class="sj-l-1of6"><img lazy-src="../../images/Axygen.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/Axygen.png" style="width: 200px;height: 133.33px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                             <li class="sj-l-2of6 ng-binding">384孔微孔板,120μl,透明,50块/箱</li>
+                             <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">Axygen</span></li>
+                             <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span><span class="hui ng-scope" ng-if="rshop.tips_id!=0" style="font-size:10px;">惠</span><span class="zhe ng-binding ng-scope" ng-if="rshop.tips_id!=0" style="font-size:10px;">39折</span></li>
+                             <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥907.24</span><span class="t3 ng-binding ng-scope" ng-if="rshop.is_ask_price=='0'&amp;&amp;rshop.tips_id!=0&amp;&amp;rshop.tips_type=='promotion'" style="font-size:12px;">￥2328.04</span></li>
+                             <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">339</a></span></li>
+                         </ul>
+                     </div>
+                     <div class="sj-r-list ng-scope" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                         <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                         <ul>
+                             <li class="sj-l-1of6"><img lazy-src="../../images/eppendorf.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/eppendorf.png" style="width: 200px;height: 133.33px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                             <li class="sj-l-2of6 ng-binding">微量离心管3810X, 1.5 ml, 无色,1000个</li>
+                             <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">eppendorf</span></li>
+                             <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span></li>
+                             <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥372.59</span></li>
+                             <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">293</a></span></li>
+                         </ul>
+                     </div>
+                     <div class="sj-r-list ng-scope" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                         <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                         <ul>
+                             <li class="sj-l-1of6"><img lazy-src="../../images/RDSystems.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/RDSystems.png" style="width: 200px;height: 133.33px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                             <li class="sj-l-2of6 ng-binding">Cultrex Rat Collagen I, Lower Viscosity (3 MG)</li>
+                             <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">R&D Systems</span></li>
+                             <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span><span class="hui ng-scope" ng-if="rshop.tips_id!=0" style="font-size:10px;">惠</span><span class="zhe ng-binding ng-scope" ng-if="rshop.tips_id!=0" style="font-size:10px;">65折</span></li>
+                             <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥279.5</span><span class="t3 ng-binding ng-scope" ng-if="rshop.is_ask_price=='0'&amp;&amp;rshop.tips_id!=0&amp;&amp;rshop.tips_type=='promotion'" style="font-size:12px;">￥430</span></li>
+                             <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">292</a></span></li>
+                         </ul>
+                     </div>
+                     <div class="sj-r-list ng-scope" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                         <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                         <ul>
+                             <li class="sj-l-1of6"><img lazy-src="../../images/Labvision.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/Labvision.png" style="width: 200px;height: 133.33px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                             <li class="sj-l-2of6 ng-binding">Protease XXV for Enzyme-Induce</li>
+                             <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">Labvision</span></li>
+                             <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span></li>
+                             <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥133.7</span></li>
+                             <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">101</a></span></li>
+                         </ul>
+                     </div>
+                 </div>
+                 <!--分页-->
+                 <div class="page-box box ng-binding ng-scope" ng-if="pageNum>1" style="">
+                     <a href="javascript:;" ng-click="pageclick(nowpageNum-1)">上一页</a>
+                     <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope act">1</span>
+                     <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">2</span>
+                     <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">3</span>
+                     <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">4</span>
+                     <a class="act" href="javascript:;" ng-click="pageclick(nowpageNum*1+1)">下一页</a>
+                     跳到<input type="number" ng-model="nowpageNum2" width="20px;" class="ng-pristine ng-untouched ng-valid ng-not-empty">/4页<button ng-click="pageclick(nowpageNum2)">确定</button>
+                 </div>
+             </div>
+        </div>
+   </body>
+</html>

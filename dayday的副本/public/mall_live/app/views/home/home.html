@@ -1,0 +1,37 @@
+<div class="wrapper">
+	<section class="pb40">
+		<!-- banner 轮播图 -->
+		<div class="h175 w_b100 p_r">
+			<div class="flexsliders h175">
+				<ul class="slides h175">
+					<li class="h_b100" ng-repeat="item in bannerInfo" repeat-finish="flexsliders('.flexsliders')">
+						<a href="{{item.url}}" class="dis_in h_b100 w_b100">
+							<img ng-src="{{item.b_img}}"/>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 列表 -->
+		<section class="box_between flex_wrap p10">
+			<!-- 列表项 -->
+			<div class="w_b50 p10 box_center" ng-repeat="item in liveListInfo track by $index" repeat-finish="setLiveListH('.liveListLi')">
+				<a ng-click="goLiveRoomClick($index)" class="box_center w_b100 br5 p_r liveListLi"">
+					<div class="back_000 opacity2 t0 l0 r0 b0 p_a br5"></div>
+					<div class="p_a b0 l0 w_b100 col_fff p5">
+						<div class="f14 wbyc" ng-bind="item.title"></div>
+						<div class="box_start mt5 ">
+							<div class="backRgba_black_5 box_start br3">
+								<div class="back_red br3 pl5 pr5 box_center h18 f_w">直播中</div>
+								<div class="pl5 pr5 box_center h18"><em ng-bind="item.watch_nums"></em>观看</div>
+							</div>
+						</div>
+					</div>
+					<img class="br5" ng-src="{{item.play_img}}" alt="" />
+				</a>
+			</div>
+		</section>
+	</section>
+	<!-- footer -->
+	<div ng-include="'app/views/template/footer.html'"></div>
+</div>

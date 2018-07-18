@@ -1,0 +1,43 @@
+<div class="wrapper">
+	<section class="pb40">
+		<!-- banner 轮播图 -->
+		<div class="h175 w_b100 p_r">
+			<div class="flexsliders h175">
+				<ul class="slides h175">
+					<li class="h_b100" ng-repeat="item in bannerInfo" repeat-finish="flexsliders('.flexsliders')">
+						<a href="{{item.url}}" class="dis_in h_b100 w_b100">
+							<img ng-src="{{item.b_img}}"/>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 分类 -->
+		<nav class="back_fff mt10 h50 lh45 over_x f14">
+			<a class="dis_in pl15 pr15" ng-repeat="class in showGoodsClassInfo track by $index" ng-bind="class.class_name" ></a>
+		</nav>
+		<!-- 列表 -->
+		<div class="mt10" ng-repeat="item in showGoodsInfo track by $index">
+			<!-- 分类title -->
+			<div class="box_center back_fff h50 col_red f18">- &nbsp<span ng-bind="item.class_name"></span>&nbsp -</div>
+			<div class="box_between flex_wrap p5">
+				<div class="w_b50 p5" ng-repeat="goods in item.show_goods track by $index">
+					<a href="#/goodsDetails?goods_id={{goods.goods_id}}" class="show">
+						<div class="w_b100">
+							<img ng-src="{{goods.goods_img}}" alt="">
+						</div>
+						<div class="back_fff p5">
+							<div class="wbyc2 f12" ng-bind="goods.goods_name"></div>
+							<div class="pt5">
+								<span class="col_red f12">现价：¥<em class="f14" ng-bind="goods.goods_now_price"></em></span>
+								<span class="scx col_999 ml10">¥<em ng-bind="goods.goods_origin_price"></em></span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- footer -->
+	<div ng-include="'app/views/template/footer.html'"></div>
+</div>

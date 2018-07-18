@@ -1,0 +1,137 @@
+{:widget('public/breadcrumbs',[
+[
+['href'=>url('Merchants/index'),'text'=>'商家列表'],
+['href'=>'javascript:;;','text'=>'商家详情'],
+]
+])}
+<div class="page-container">
+    <div class="cl pd-5 bg-1 bk-gray">基础信息</div>
+        <div class="pd-20">
+            <div class="tabBar cl">
+                <span class='sign {if condition="$Request.param.type eq 6"}current{/if}' type="1">粉丝列表</span>
+                <!--<span class='sign {if condition="$Request.param.type eq 9"}current{/if}' type="9">直播记录</span>-->
+                <!--<span class='sign {if condition="$Request.param.type eq 10"}current{/if}' type="10">录播列表</span>-->
+            </div>
+            <div class="" style="margin-left: 1130px;">
+                <span type="">共有{$count}条</span>
+            </div>
+            <!---------被关注--------->
+            <table class="table table-border table-bordered table-hover table-bg table-sort" {if condition="$type neq 1"}hidden{/if}>
+            <thead>
+            <tr class="text-c">
+                <th width="100">被用户ID</th>
+                <th width="100">被关注用户</th>
+                <th width="100">用户手机</th>
+                <th width="100">被关注时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            {volist name="list" id="vo"}
+            <tr class="text-c">
+                <td>{$vo.user_id}</td>
+                <td>{$vo.username}</td>
+                <td>{$vo.user_phone}</td>
+                <td>{$vo.intime|date="Y-m-d H:i:s",###}</td>
+            </tr>
+            {/volist}
+            </tbody>
+            </table>
+        </div>
+    <div style="text-align:center">
+            <span>
+                 {$list->render()}
+            </span>
+    </div>
+    </div>
+    <div id="made" class="hide" style="display: none;">
+        <img style="width:100%" id="zhubo" src="">
+    </div>
+    <script type="text/javascript">
+        $(".sign").click(function(){
+            var type = $(this).attr('type');
+            $(this).siblings().removeClass('current');
+            $(this).addClass('current');
+            var url = "/admin/merchants/merchants_view/mid/{$mid}/type/"+type;
+            window.location.href = url;
+            $('.all').addClass("Height0");
+            $('.all').removeClass('hide');
+            $('.tag'+type.removeClass("Height0"));
+        });
+
+        function offline(id) {
+            layer.confirm('确定强制下线？',function(index){
+                $.post("{:url('Live/offline')}", {id:id}, function(v){
+                    if( v == 1 ){
+                        layer.msg('已强制下线！',{icon:1,time:1000});
+                        window.location.href = window.location.href;
+
+                    }else{
+                        layer.msg('强制下线失败！',{icon:5,time:1000});
+                    }
+                });
+            });
+        }
+
+        function del(obj,id){
+            layer.confirm('确认要删除吗？',function(index){
+                $.post("{:url('Live/del_live_store')}", {ids:id}, function(data){
+                    if( data.status == 'ok' ){
+                        $(obj).parents("tr").remove();
+                        layer.msg('已删除!',{icon:1,time:1000});
+                    }else{
+                        layer.msg(data.info,{icon:5,time:1000});
+                    }
+                },'json');
+            });
+        }
+
+        function del_video(obj,id){
+            layer.confirm('确认要删除吗？',function(index){
+                $.post("{:url('Live/del_video')}", {ids:id}, function(data){
+                    if( data.status == 'ok' ){
+                        $(obj).parents("tr").remove();
+                        layer.msg('已删除!',{icon:1,time:1000});
+                    }else{
+                        layer.msg(data.info,{icon:5,time:1000});
+                    }
+                },'json');
+            });
+        }
+
+        function view_play_img(v){
+            $("#zhubo").attr('src',v);
+            layer.open({
+                type: 1,
+                title: false,
+                closeBtn: 0,
+                area: '516px',
+                skin: 'layui-layer-nobg', //没有背景色
+                shadeClose: true,
+                content: $('#made')
+            });
+        }
+
+        function sel(id) {
+            layer.open({
+                type: 2,
+                title: false,
+                area: ['1020px', '587px'],
+                shade: 0.1,
+                closeBtn: 1,
+                shadeClose: false,
+                content: id,
+            });
+        }
+
+        function view_url(v){
+            layer.open({
+                type: 2,
+                title: false,
+                area: ['800px', '500px'],
+                shade: 0.8,
+                closeBtn: 0,
+                shadeClose: true,
+                content: v
+            });
+        }
+    </script>

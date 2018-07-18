@@ -1,0 +1,780 @@
+{:widget('base/breadcrumbs',[
+[
+['href'=>url('Live/apply_list'),'text'=>'审核列表'],
+['href'=>'','text'=>$text]
+]
+])}
+<style>
+    .ibutton { padding: 3px 15px; *padding: 0 15px; *height: 24px;  font-size: 12px; text-align: center; text-shadow: #CF510B 0 1px 0; border:1px solid #ec5c0d; border-radius: 2px; background: #FC750A; background-image: -webkit-linear-gradient(top, #fc8746, #ec5d0e); color:#FFF; cursor: pointer; display: inline-block; }
+    /*a  upload */
+    .a-upload {
+        padding: 4px 10px;
+        /*height: 20px;*/
+        line-height: 20px;
+        position: relative;
+        cursor: pointer;
+        color: #888;
+        background: #fafafa;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        overflow: hidden;
+        display: inline-block;
+        *display: inline;
+        *zoom: 1
+    }
+
+    .a-upload  input {
+        position: absolute;
+        font-size: 100px;
+        right: 0;
+        top: 0;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        cursor: pointer
+    }
+
+    .a-upload:hover {
+        color: #444;
+        background: #eee;
+        border-color: #ccc;
+        text-decoration: none
+    }
+    .tan-chuang{
+        width: 100px;
+        height: 100px;
+        position: relative;
+    }
+    *{ margin:0px; padding:0px; font-family:Microsoft Yahei; box-sizing:border-box; -webkit-box-sizing:border-box;}
+    .ul_pics{ float:left;}
+    .ul_pics li{float:left; margin:0px; padding:0px; margin-left:5px; margin-top:5px; position:relative; list-style-type:none; border:1px solid #eee;}
+    .ul_pics li img{width:80px;height:80px;}
+    .ul_pics li i{ position:absolute; top:0px; right:-1px; background:red; cursor:pointer; font-style:normal; font-size:10px; width:14px;
+        height:14px; text-align:center; line-height:12px; color:#fff;}
+    .progress{position:relative;  background:#eee;height:15px;line-height:15px;}
+    .bar {background-color: green; display:block; width:0%; height:15px; }
+    .percent{ height:15px;  text-align:center;  left:0px; color:#666; line-height:15px; font-size:12px; }
+</style>
+
+<div class="page-container">
+    <div id="big"></div>
+    <div id="big2"></div>
+    <form class="form form-horizontal" id="form" method="post">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>商家ID：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <span>{$data['gl_merchants_id']}</span>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>商家名称：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <span>{$data['company_name']}</span>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>选择主播：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <span class="select-box" style="width: 33%">
+                    <select name="zhu_phone"  class="select" disabled>
+                        <option value="">请选择</option>
+                        {volist name="res" id="vo"}
+                            <option value="{$vo.anchor_phone}" {if condition=" $re.zhu_phone eq $vo.anchor_phone "}selected{else/}{/if}>{$vo.anchor_name}&nbsp&nbsp&nbsp{$vo.anchor_phone}</option>
+                        {/volist}
+                    </select>
+				</span>
+                <!--<a href="javascript:;;" class="btn btn-primary radius" onclick="add_anchor('添加主播（First）','{:url('Apply/add_anchor')}','4','','510')" >-->
+                    <!--<i class="Hui-iconfont">&#xe600;</i>添加主播-->
+                <!--</a>-->
+                <!--<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:0px;margin-right: 330px;" onclick="ajax_data" title="刷新" >-->
+                    <!--<i class="Hui-iconfont">&#xe68f;</i>-->
+                <!--</a>-->
+            </div>
+
+        </div>
+        <!--<div class="row cl">-->
+            <!--<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>直播专场：</label>-->
+            <!--<div class="formControls col-xs-8 col-sm-9">-->
+                <!--<span class="select-box" style="width: 33%">-->
+                    <!--<select name="zhuan_type"  class="select" disabled>-->
+                        <!--<option value="">请选择</option>-->
+                        <!--<option value="1">是</option>-->
+                        <!--<option value="2">否</option>-->
+                    <!--</select>-->
+				<!--</span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>场控数：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" name ="control_num" value="{$re['control_num']?$re['control_num']:''}"  id="control_num" style="width: 50%" />
+            </div>
+        </div>
+        <!--<div class="row cl">-->
+            <!--<label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>选择大屏：</label>-->
+            <!--<div class="formControls col-xs-8 col-sm-9">-->
+                <!--<span class="select-box" style="width: 33%">-->
+                    <!--<select name="screen_id" onchange="area_linke2(this.value)" class="select">-->
+                        <!--<option value="">请选择</option>-->
+                        <!--{volist name="re1" id="vo"}-->
+                            <!--<option value="{$vo.screen_id}" {if condition=" $re.screen_id eq $vo.screen_id "}selected{else/}{/if}>{$vo.position}</option>-->
+                        <!--{/volist}-->
+                    <!--</select>-->
+				<!--</span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>直播类型：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                  <span class="select-box" style="width: 33%">
+                    <select name="class_id"  class="select" disabled>
+                        <option value="">请选择</option>
+                        {volist name="home_class" id="vo"}
+                            <option value="{$vo.title}" {if condition=" $re.status eq $vo.id "}selected{else/}{/if}>{$vo.title}</option>
+                        {/volist}
+                    </select>
+				</span>
+            </div>
+        </div>
+        <!--<div class="row cl skin-minimal">-->
+            <!--<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>直播标签：</label>-->
+            <!--<div class="formControls col-xs-8 col-sm-9">-->
+                <!--{volist name="live_class" id="vo"}-->
+                <!--<div class="check-box">-->
+                    <!--<input type="radio" id="checkbox-2" name="class_id" value="{$vo.live_class_id}"{if condition="$vo.live_class_id eq $re['class_id']"}checked{/if}>{$re.tag}-->
+                    <!--<label for="checkbox-2">{$vo.tag}</label>-->
+                <!--</div>-->
+                <!--{/volist}-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>直播标题：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" name ="title" value="{$re['title']?$re['title']:''}"  id="title" style="width: 50%" />
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>直播地址：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" name ="address" value="{$re['address']?$re['address']:''}"  id="address" style="width: 50%" />
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>开播时间段：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text " placeholder="开始时间" id="start_time" style="width:190px" name="start_time" value="{$re.start_time|date='Y-m-d H:i:s',###}" readonly>: <input type="text" class="input-text " placeholder="结束时间" id="end_time" style="width:190px" name="end_time" value="{$re.end_time|date='Y-m-d H:i:s',###}" readonly>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>直播封面：</label>
+            <label  id="image_show" style="margin-left: 10px;">宽高：750px，360px；大小：不超过1M</label>
+
+            <div class="formControls col-xs-8 col-sm-9">
+                <div class="droparea spot" id="image1" style="background-image: url('{$re['cover_img']}');background-size: 220px 160px;" >
+                    <div class="instructions" onclick="del_image('1')">删除</div>
+                    <div id="uparea1"></div>
+                    <input type="hidden" name="cover_img" id="image_1" value="{$re['cover_img']}" />
+                </div>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>主播资质：</label>
+            <label  id="image_show1" style="margin-left: 10px;">宽高：750px，360px；大小：不超过1M</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <div class="droparea spot" id="logo_img" style="background-image: url('{$anchor.user_img?$anchor.user_img:''}');background-size: 220px 160px;" >
+                    <div class="instructions">主播资质</div>
+                    <div id="logo"></div>
+                    <input type="hidden" name="user_img" id="logo_url" value="{$anchor['user_img']?$anchor['user_img']:''}" />
+                </div>
+                <div class="droparea spot" id="image6" style="background-image: url('{$anchor.user_img2?$anchor.user_img2:''}');background-size: 220px 160px;" >
+                    <div class="instructions">主播资质</div>
+                    <div id="uparea6"></div>
+                    <input type="hidden" name="user_img2" id="image_6" value="{$anchor['user_img2']?$anchor['user_img']:''}" />
+                </div>
+                <div class="droparea spot" id="image3" style="background-image: url('{$anchor.user_img3?$anchor.user_img3:''}');background-size: 220px 160px;" >
+                    <div class="instructions">主播资质</div>
+                    <div id="uparea3"></div>
+                    <input type="hidden" name="user_img3" id="image_3" value="{$anchor['user_img3']?$anchor['user_img3']:''}" />
+                </div>
+                <div class="droparea spot" id="image4" style="background-image: url('{$anchor.user_img4?$anchor.user_img4:''}');background-size: 220px 160px;" >
+                    <div class="instructions">主播资质</div>
+                    <div id="uparea4"></div>
+                    <input type="hidden" name="user_img4" id="image_4" value="{$anchor['user_img4']?$anchor['user_img4']:''}" />
+                </div>
+                <div class="droparea spot" id="image5" style="background-image: url('{$anchor.user_img5?$anchor.user_img5:''}');background-size: 220px 160px;" >
+                    <div class="instructions">主播资质</div>
+                    <div id="uparea5"></div>
+                    <input type="hidden" name="user_img5" id="image_5" value="{$anchor['user_img5']?$anchor['user_img5']:''}" />
+                </div>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">直播简介：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <textarea name="apply_content" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="textarealength(this,200)">{$re.apply_content}</textarea>
+                <p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
+            </div>
+        </div>
+        {if condition=" $re['status'] eq '3'"}
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>拍卖证书：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                {:widget('Base/ueditor',['content',$re['content']])}
+            </div>
+        </div>
+        {/if}
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>大屏地址：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <span>{$re['address']}</span>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">大屏型号：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <span>{$screen['model']}</span>
+                <span style="margin-left: 50px;">大屏尺寸：{$screen['wid_hei']}</span>
+                <span style="margin-left: 50px;">大屏颜色：{$screen['screen_color']}</span>
+                <span style="margin-left: 50px;">支持触碰：
+                    {switch name=$screen['touch'] }
+					{case value="0" }否{/case}
+					{case value="1" }是{/case}
+					{/switch}</span>
+                <span style="margin-left: 50px;">大屏数：1个</span>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span></label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <div class="droparea spot" id="image2" style="background-image: url('{$screen['img']}');background-size: 220px 160px;" >
+                    <div class="instructions">大屏图片</div>
+                    <div id="uparea2"></div>
+                    <input type="hidden" name="img" id="image_2" value="{$screen['img']}" />
+                </div>
+            </div>
+        </div>
+        {if condition=" $re['screen_class_id'] neq '0'"}
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">大屏MAC：</label>
+            <input id="screen_id" type="hidden" class="input-text" value=""  name="screen_id">
+            <span>
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                选择大屏
+                </button>
+                <div class="modal fade bs-example-modal-lg" id="myModal"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">选择大屏</h4>
+                        </div>
+                        <div class="modal-body">
+                    <table border="1" cellpadding="0" cellspacing="0" width="100%" class="table_index1" id="table_user_list">
+                        <thead>
+                <tr class="text-c">
+                    <th width="20" style="text-align: center"><input type="radio" name="" value=""></th>
+                    <th width="20" style="text-align: center">序号</th>
+                    <th width="50" style="text-align: center">型号</th>
+                    <th width="30" style="text-align: center">大屏尺寸</th>
+                    <th width="40" style="text-align: center">支持触摸</th>
+                    <th width="40" style="text-align: center">MAC地址</th>
+                    <th width="40" style="text-align: center">租用价格(单位)</th>
+                    <!--<th width="40">商家名称</th>-->
+                    <th width="40" style="text-align: center">备注</th>
+                    <!--<th width="40">状态</th>-->
+                </tr>
+                </thead>
+                <tbody>
+                {volist name="screen_list" id="vo"}
+                <tr class="text-c" id="goods_id{$vo.screen_id}">
+                    <td><input type="radio" model="{$vo.model}" wid_hei="{$vo.wid_hei}" touch="{$vo.touch}" Mac_address="{$vo.Mac_address}" screen_price="{$vo.screen_price}" desc="{$vo.desc}" value="{$vo.screen_id}" name="checkbox"></td>
+                    <td>{$vo.screen_id}</td>
+                    <td>{$vo.model}</td>
+                    <td>{$vo.wid_hei}</td>
+                    <td>
+                        {switch name=$screen['touch'] }
+					    {case value="1" }否{/case}
+					    {case value="2" }是{/case}
+					    {/switch}
+                    </td>
+                    <td>{$vo.Mac_address}</td>
+                    <td>{$vo.screen_price}</td>
+                    <!--<td>{$vo.desc}</td>-->
+                    <td>{$vo.desc}</td>
+                </tr>
+                {/volist}
+                </tbody>
+                </table>
+                        </div>
+                        <div class="modal-footer" >
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <button type="button" class="btn btn-primary"   onclick="screen_add()"  value="">保存</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </span>
+        </div>
+        <div class="cl pd-30 bg-1 bk-gray mt-10" style="margin-left: 100px">
+            <table class="table table-border table-bordered table-hover table-bg table-sort">
+                <thead>
+                <tr class="text-c">
+                     <th width="20" style="text-align: center">序号</th>
+                     <th width="50" style="text-align: center">型号</th>
+                     <th width="30" style="text-align: center">大屏尺寸</th>
+                     <th width="40" style="text-align: center">支持触摸</th>
+                     <th width="40" style="text-align: center">MAC地址</th>
+                     <th width="40" style="text-align: center">租用价格(单位)</th>
+                     <th width="40" style="text-align: center">备注</th>
+                </tr>
+                </thead>
+                <tbody id="showthis">
+                {volist name="screen_list" id="vo"}
+                <tr class="text-c">
+                    <td>{$vo.screen_id}</td>
+                    <td>{$vo.model}</td>
+                    <td>{$vo.wid_hei}</td>
+                    <td>
+                        {switch name=$screen['touch'] }
+                        {case value="1" }否{/case}
+                        {case value="2" }是{/case}
+                        {/switch}
+                    </td>
+                    <td>{$vo.Mac_address}</td>
+                    <td>{$vo.screen_price}</td>
+                    <td>{$vo.desc}</td>
+                </tr>
+                {/volist}
+                </tbody>
+            </table>
+          </div>
+        {/if}
+        <!--<div class="row cl">-->
+            <!--<label class="form-label col-xs-4 col-sm-2">图片：</label>-->
+            <!--<div class="formControls col-xs-8 col-sm-9">-->
+                <!--<div class="droparea spot" id="image2" style="background-image: url('{$re['video_img']}');background-size: 220px 160px;" >-->
+                    <!--<div class="instructions" onclick="del_image('1')">删除</div>-->
+                    <!--<div id="uparea2"></div>-->
+                    <!--<input type="hidden" name="video_img" id="image_2" value="{$re['video_img']}" />-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div id="upload" class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">视频：</label>
+            <label style="margin-left: 10px;">大小：不超过100M；格式：MP4/AVI</label>
+            <div  class="formControls col-xs-8 col-sm-9">
+                <div href="javascript:void(0);" class="a-upload" rel="external nofollow" id="btn">
+                    {$uid?'点击这里更换视频':'点击这里上传视频'}
+                </div>
+                <a title="播放" href="javascript:;" onclick="sel('{:url('Live/play_url',['id'=>$re['apply_id']])}')"  class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e6;</i></a>
+                <input name="url" type="hidden" id="url" value="{$re['url']}" />{$re['url']}
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"></label>
+            <div  class="formControls col-xs-8 col-sm-9">
+                <ul id="ul_pics" class="ul_pics clearfix">
+                </ul>
+            </div>
+        </div>
+        {if condition=" $re['status'] neq '1'"}
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">商品列表：</label>
+        </div>
+        <div style="margin-left: 100px">
+            <table class="table table-border table-bordered table-hover table-bg table-sort">
+                <thead>
+                <tr class="text-c">
+                    <th width="20">序号</th>
+                    <th width="50">名称</th>
+                    <th width="30">商品缩略图</th>
+                    <th width="40">商品价格</th>
+                    <th width="100">淘宝链接</th>
+                    <th width="100">京东链接</th>
+                </tr>
+                </thead>
+                <tbody>
+                {volist name="goods" id="vo"}
+                <tr class="text-c">
+                    <td>{$vo.goods_id}</td>
+                    <td>{$vo.goods_name}</td>
+                    <td><img src="{$vo.goods_image}" style="width:60px; height:50px; border-radius:25px;"></td>
+                    <td>{$vo.goods_price}</td>
+                    <td>{$vo.tbUrl}</td>
+                    <td>{$vo.jdUrl}</td>
+                </tr>
+                {/volist}
+                </tbody>
+            </table>
+        </div>
+        {/if}
+        <div class="row cl">
+            <!--<div id="tag3" class="row tag cl {$re.is_shenhe == 3 ? '' : 'hiden'}">-->
+            <!--<label class="form-label col-xs-4 col-sm-2">拒绝理由：</label>-->
+            <!--<div class="formControls col-xs-8 col-sm-9">-->
+                <!--<textarea name="refusal" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入20个字符" datatype="*10-100" dragonfly="true" nullmsg="拒绝理由不能为空！" onKeyUp="textarealength(this,50)">{$re.refusal}</textarea>-->
+                <!--<p class="textarea-numberbar"><em class="textarea-length">0</em>/50</p>-->
+            <!--</div>-->
+        <!--</div>-->
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>审核状态：</label>
+            <div class="formControls col-xs-8 col-sm-9" style="display: inline-block">
+                <select name="is_shenhe" class="select input-text" disabled>
+                    <option value="1" {if condition=" $re['is_shenhe'] eq 1 "}selected{/if}>未审核</option>
+                    <option value="2" {if condition=" $re['is_shenhe'] eq 2 "}selected{/if}>审核通过</option>
+                    <option value="3" {if condition=" $re['is_shenhe'] eq 3 "}selected{/if}>拒绝</option>
+                    <option value="4" {if condition=" $re['is_shenhe'] eq 4 "}selected{/if}>正在直播</option>
+                    <option value="6" {if condition=" $re['is_shenhe'] eq 6 "}selected{/if}>结束活动</option>
+                </select>
+            </div>
+        </div>
+        <div id="tag3" class="row tag cl {$re.is_shenhe == 3 ? '' : 'hiden'}">
+            <label class="form-label col-xs-4 col-sm-2">拒绝理由：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <textarea name="refusal" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入20个字符" datatype="*10-100" dragonfly="true" nullmsg="拒绝理由不能为空！" onKeyUp="textarealength(this,50)">{$re.refusal}</textarea>
+                <p class="textarea-numberbar"><em class="textarea-length">0</em>/50</p>
+            </div>
+        </div>
+        <!--<div class="row cl">-->
+            <!--<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">-->
+                <!--<button  class="submit btn btn-primary radius"  type="button"><i class="Hui-iconfont">&#xe632;</i> 保存并提交</button>-->
+                <!--<button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>-->
+                <!--<input type="hidden" class="input-text" value="{$re.apply_id?$re.apply_id:''}" placeholder=""  name="apply_id">-->
+            <!--</div>-->
+        <!--</div>-->
+    </form>
+</div>
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript">
+    $(document).ready(function() {
+        var goods_id = localStorage.getItem("goods_id");
+        // var datas= document.getElementById("goodes_data");
+        // console.log(datas.val);
+        // document.getElementById("goods").value = goods_id;
+        $("#goods").val(goods_id);
+        var content;
+        KindEditor.ready(function (K) {
+            content = K.create('#content', {
+                allowFileManager: true,
+                uploadJson: "{:url('Tools/upload',['dirname'=>'banner'])}"
+            });
+        });
+
+        KindEditor.ready(function (K) {
+            K.create();
+            var editor = K.editor({
+                allowFileManager: true,
+                uploadJson: "{:url('Tools/upload',['dirname'=>'banner'])}"
+                //sdl:false
+            });
+            K('#logo').click(function () {
+                console.log(1);
+                editor.loadPlugin('image', function () {
+                    editor.plugin.imageDialog({
+                        imageUrl: K('#logo_img').val(),
+                        clickFn: function (url, title, width, height, border, align) {
+                            console.log(url);
+                            $('#logo').css('background-image', 'url(' + url + ')').css('background-size', '220px 160px');
+                            K('#logo_url').val(url);
+                            // K('#getImgUrl').val(url);
+                            editor.hideDialog();
+                        }
+                    });
+                });
+            });
+
+            K('#uparea1').click(function () {
+                console.log(1);
+                editor.loadPlugin('image', function () {
+                    editor.plugin.imageDialog({
+                        imageUrl: K('#image_1').val(),
+                        clickFn: function (url, title, width, height, border, align) {
+                            console.log(url);
+                            $('#image1').css('background-image', 'url(' + url + ')').css('background-size', '220px 160px');
+                            K('#image_1').val(url);
+                            // K('#getImgUrl').val(url);
+                            editor.hideDialog();
+                        }
+                    });
+                });
+            });
+
+            K('#uparea2').click(function () {
+                console.log(1);
+                editor.loadPlugin('image', function () {
+                    editor.plugin.imageDialog({
+                        imageUrl: K('#image_2').val(),
+                        clickFn: function (url, title, width, height, border, align) {
+                            console.log(url);
+                            $('#image2').css('background-image', 'url(' + url + ')').css('background-size', '220px 160px');
+                            K('#image_2').val(url);
+                            // K('#getImgUrl').val(url);
+                            editor.hideDialog();
+                        }
+                    });
+                });
+            });
+
+
+            $(".submit").click(function () {
+                commonAjaxSubmit('', 'form');
+                return false;
+            });
+
+            $("#uparea1").mouseover(function (e) {
+                $("#big").css({top: e.pageY, right: e.pageX});//鼠标定位一个点
+                var img = $('#image_1').val();
+                if (img.length !== 0) {
+                    $("#big").html('<img src="' + $('#image_1').val() + '" width=380 height=300>');
+                    $("#big").show();        //show：显示
+                }
+            });
+            $("#uparea1").mouseout(function () {
+                $("#big").hide();
+            });
+
+            $("#logo").mouseover(function (e) {
+                $("#big").css({top: e.pageY, right: e.pageX});//鼠标定位一个点
+                var img = $('#logo_url').val();
+                if (img.length !== 0) {
+                    $("#big").html('<img src="' + $('#logo_url').val() + '" width=380 height=300>');
+                    $("#big").show();        //show：显示
+                }
+            });
+            $("#logo").mouseout(function () {
+                $("#big").hide();
+            });
+
+
+            $("#uparea2").mouseover(function (e) {
+                $("#big").css({top: e.pageY, right: e.pageX});//鼠标定位一个点
+                var img = $('#image_2').val();
+                if (img.length !== 0) {
+                    $("#big").html('<img src="' + $('#image_2').val() + '" width=380 height=300>');
+                    $("#big").show();        //show：显示
+                }
+            });
+            $("#uparea2").mouseout(function () {
+                $("#big").hide();
+            });
+
+            $('.skin-minimal input').iCheck({
+                checkboxClass: 'icheckbox-blue',
+                radioClass: 'iradio-blue',
+                increaseArea: '20%'
+            });
+        });
+
+
+    });
+
+
+
+
+</script>
+<!--/请在上方写此页面业务相关的脚本--><!--/请在上方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/static/plupload/js/moxie.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/plupload/2.1.5/plupload.min.js"></script>
+<script type="text/javascript" src="/static/plupload/js/i18n/zh_CN.js"></script>
+<script type="text/javascript" src="/static/qiniu-js-sdk/dist/qiniu.js"></script>
+<script type="text/javascript" src="/static/layui/lay/dest/layui.all.js"></script>
+<script>
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        var start = {
+            elem: '#start_time',
+            event: 'click', //触发事件
+            format: 'YYYY-MM-DD hh:mm:ss', //日期格式
+            istime: true, //是否开启时间选择
+            isclear: true, //是否显示清空
+            istoday: true, //是否显示今天
+            issure: true, //是否显示确认
+            festival: true,//是否显示节日
+            min: '2018-04-02 00:00:00', //最小日期
+            max: '2099-12-31 23:59:59', //最大日期
+            choose: function(datas){
+                $("#start_time").attr("value",datas);
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
+            }
+        };
+        var end = {
+            elem: '#end_time',
+            event: 'click', //触发事件
+            format: 'YYYY-MM-DD hh:mm:ss', //日期格式
+            istime: true, //是否开启时间选择
+            isclear: true, //是否显示清空
+            istoday: true, //是否显示今天
+            issure: true, //是否显示确认
+            festival: true,//是否显示节日
+            min: '2018-04-02 00:00:00', //最小日期
+            max: '2099-12-31 23:59:59', //最大日期
+            choose: function(datas){
+                $("#end_time").attr("value",datas);
+                start.max = datas; //结束日选好后，重置开始日的最大日期
+            }
+        };
+        document.getElementById('start_time').onclick = function(){
+            start.elem = this;
+            laydate(start);
+        }
+        document.getElementById('end_time').onclick = function(){
+            end.elem = this
+            laydate(end);
+        }
+    });
+
+    var uploader = Qiniu.uploader({
+        runtimes: 'html5,flash,html4',    //上传模式,依次退化
+        browse_button: 'btn',       //上传选择的点选按钮，**必需**
+        uptoken_url: "{:url('Tools/get_qiniu_token')}",            //Ajax请求upToken的Url，**强烈建议设置**（服务端提供）
+        // uptoken : '', //若未指定uptoken_url,则必须指定 uptoken ,uptoken由其他程序生成
+        // unique_names: true, // 默认 false，key为文件名。若开启该选项，SDK为自动生成上传成功后的key（文件名）。
+        // save_key: true,   // 默认 false。若在服务端生成uptoken的上传策略中指定了 `sava_key`，则开启，SDK会忽略对key的处理
+        domain: 'http://msplay.qqyswh.com',   //bucket 域名，下载资源时用到，**必需**
+        get_new_uptoken: false,  //设置上传文件的时候是否每次都重新获取新的token
+        container: 'upload',           //上传区域DOM ID，默认是browser_button的父元素，
+        max_file_size: '1000mb',           //最大文件体积限制
+        flash_swf_url: '/static//plupload/js/Moxie.swf',  //引入flash,相对路径
+        silverlight_xap_url: "/static/plupload/js/Moxie.xap",
+        max_retries: 3,                   //上传失败最大重试次数
+        dragdrop: true,                   //开启可拖曳上传
+        drop_element: 'upload',        //拖曳上传区域元素的ID，拖曳文件或文件夹后可触发上传
+        unique_names: true,
+        chunk_size: '4mb',                //分块上传时，每片的体积
+        auto_start: true,                 //选择文件后自动上传，若关闭需要自己绑定事件触发上传
+        filters: {
+            mime_types : [
+                {title : "Image files", extensions: "mp4,3gp,mp3,flv,avi,m3u8"}
+            ]
+        },
+        init: {
+            'FilesAdded': function(up, files) {
+                //do something
+                if ($("#ul_pics").children("li").length > 0) {
+                    alert("您上传的内容太多了！");
+                    uploader.destroy();
+                } else {
+                    var li = '';
+                    plupload.each(files, function(file) { //遍历文件
+                        li += "<li id='" + file['id'] + "'><div class='progress'><span class='bar'></span></div><div class='percent'>上传中 0%</div></li>";
+                    });
+                    $("#ul_pics").append(li);
+                    uploader.start();
+                }
+            },
+            'BeforeUpload': function(up, file) {
+                //do something
+            },
+            'UploadProgress': function(up, file) {
+                //可以在这里控制上传进度的显示
+                //可参考七牛的例子
+                var percent = file.percent;
+                $("#" + file.id).find('.bar').css({"width": percent + "%"});
+                $("#" + file.id).find(".percent").text("上传中 "+percent + "%");
+            },
+            'UploadComplete': function() {
+                //do something
+            },
+            'FileUploaded': function(up, file, info) {
+                var str = $.parseJSON(info.response);
+                console.log(str);
+                console.log(str.key);
+                $('#url').val(str.key);
+                //每个文件上传成功后,处理相关的事情
+                //其中 info 是文件上传成功后，服务端返回的json，形式如
+                //{
+                //  "hash": "Fh8xVqod2MQ1mocfI4S4KpRL6D98",
+                //  "key": "gogopher.jpg"
+                //}
+//                var domain = up.getOption('domain');
+//                var res = eval('(' + info + ')');
+//                var sourceLink = domain + res.key;//获取上传文件的链接地址
+                //do something
+            },
+            'Error': function(up, err, errTip) {
+                alert(errTip);
+            },
+            'Key': function(up, file) {
+                //当save_key和unique_names设为false时，该方法将被调用
+                var key = "";
+                $.ajax({
+                    url: '/qiniu-token/get-key/',
+                    type: 'GET',
+                    async: false,//这里应设置为同步的方式
+                    success: function(data) {
+                        var ext = Qiniu.getFileExtension(file.name);
+                        key = data + '.' + ext;
+                    },
+                    cache: false
+                });
+                return key;
+            }
+        }
+    });
+</script>
+<script type="text/javascript">
+    //大屏型号选择展示
+    var gidbox = new Array();
+    function Checked(id) {
+        var gid = new Array();
+        $.each($('input[name="checkbox"]:checked'), function(i, n){
+            gid.push( $(n).val() );
+             gidbox.push({
+                            'screen_id':$(n).val(),
+                            'model':$(n).attr('model'),
+                            'wid_hei':$(n).attr('wid_hei'),
+                            'touch':$(n).attr('touch'),
+                            'Mac_address':$(n).attr('Mac_address'),
+                            'screen_price':$(n).attr('screen_price'),
+                            'desc':$(n).attr('desc')
+                        })
+        });
+        console.log(gid);
+        $("#screen_id").val(gid);
+
+        return gid;
+    }
+    function screen_add(kid){
+        kid = kid ? kid : Checked();
+        kid = kid.toString();
+        if(kid == ''){
+            layer.msg('你没有选择任何选项！', {offset: 95,shift: 6});
+            return false;
+        }
+        layer.confirm('确认选择吗？',function(index){
+            $.post("{:url('live/add_goods')}", {ids:kid}, function(data){
+                if( data.status == 'ok' ){
+                    for(var i=0;i<gidbox.length;i++){
+                        // console.log(123);
+                        $('#showthis').append(
+                            '<tr class="text-c  check_data">',
+                                '<td style="text-align:center">'+gidbox[i].screen_id+'</td>',
+                                '<td style="text-align:center">'+gidbox[i].model+'</td>',
+                                '<td style="text-align:center">'+gidbox[i].wid_hei+'</td>',
+                                '<td style="text-align:center">'+(gidbox[i].touch=='1'?'否':'是')+'</td>',
+                                '<td style="text-align:center">'+gidbox[i].Mac_address+'</td>',
+                                '<td style="text-align:center">'+gidbox[i].screen_price+'</td>',
+                                '<td style="text-align:center">'+gidbox[i].desc+'</td>',
+                            '</tr>'
+                    )
+                    }
+                    layer.msg(data.info,{icon:1,time:1000});
+                }else{
+                    layer.msg(data.info,{icon:1,time:1000});
+                }
+            },'json');
+        })
+    }
+    function sel(data) {
+        layer.open({
+            type: 2,
+            title: false,
+            area: ['1020px', '587px'],
+            shade: 0.1,
+            closeBtn: 1,
+            shadeClose: false,
+            content: data,
+        });
+    }
+
+</script>

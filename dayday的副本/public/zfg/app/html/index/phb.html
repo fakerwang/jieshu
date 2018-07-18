@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排行榜</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+</head>
+<body>
+
+<div class="page ng-scope">
+    <div class="mainbox clearfix bg-f5 pad-b70 ng-scope">
+        <!--面包屑-->
+        <div class="mbx-navbox">
+            <div class="mbx-nav">
+                <div class="mbx-nav-l"><a href="#/">首页</a><a href="javascript:;">排行榜</a></div>
+            </div>
+        </div>
+        <!---->
+        <div class="box fenlei2 clearfix">
+            <ul>
+                <li><label>榜单</label><p><span class="act" ng-click="fxhhlist('exact',1)" tab="">热卖榜</span>
+                    <span ng-click="fxhhlist('album',1)" tab="" class="">人气店铺</span>
+                    <span ng-click="fxhhlist('album',1)" tab="" class="">降价榜</span>
+                    <span ng-click="fxhhlist('album',1)" tab="" class="">折扣榜</span>
+                    <span ng-click="fxhhlist('album',1)" tab="" class="">热门活动榜</span>
+                </p></li>
+                <li><label>分类</label><p><span class="act" ng-click="fxhhlist('exact',1)" tab="">全部</span>
+                    <span ng-click="fxhhlist('album',1)" tab="" class="">试剂</span>
+
+                </p></li>
+            </ul>
+        </div>
+        <div class="box loading-box"></div>
+        <div class="cnxh-listbox mar-t40 clearfix bangdan-hot" style="margin-top:40px !important;">
+            <div class="sj-r-list ng-scope act" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                <ul>
+                    <li class="sj-l-1of6"><img lazy-src="../../images/67997.jpg" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/67997.jpg" style="width: 200px;height: 185px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                    <li class="sj-l-2of6 ng-binding">KnockOut™ DMEM/F-12</li>
+                    <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">GIBCO</span></li>
+                    <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span><span class="hui ng-scope" ng-if="rshop.tips_id!=0" style="font-size:10px;">惠</span><span class="zhe ng-binding ng-scope" ng-if="rshop.tips_id!=0" style="font-size:10px;">77折</span></li>
+                    <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥401.94</span><span class="t3 ng-binding ng-scope" ng-if="rshop.is_ask_price=='0'&amp;&amp;rshop.tips_id!=0&amp;&amp;rshop.tips_type=='promotion'" style="font-size:12px;">￥552</span></li>
+                    <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">10</a></span></li>
+                </ul>
+            </div>
+            <div class="sj-r-list ng-scope act" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                <ul>
+                    <li class="sj-l-1of6"><img lazy-src="../../images/74087.jpg" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/74087.jpg" style="width: 200px;height: 185px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                    <li class="sj-l-2of6 ng-binding">PowerUp™ SYBR® Green Master Mix</li>
+                    <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">ABI</span></li>
+                    <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span><span class="hui ng-scope" ng-if="rshop.tips_id!=0" style="font-size:10px;">惠</span><span class="zhe ng-binding ng-scope" ng-if="rshop.tips_id!=0" style="font-size:10px;">77折</span></li>
+                    <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥414.26</span><span class="t3 ng-binding ng-scope" ng-if="rshop.is_ask_price=='0'&amp;&amp;rshop.tips_id!=0&amp;&amp;rshop.tips_type=='promotion'" style="font-size:12px;">￥538</span></li>
+                    <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">10</a></span></li>
+                </ul>
+            </div>
+            <div class="sj-r-list ng-scope act" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                <ul>
+                    <li class="sj-l-1of6"><img lazy-src="../../images/RDSystems.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/RDSystems.png" style="width: 200px;height: 133.33px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                    <li class="sj-l-2of6 ng-binding">N21-MAX Media Supplement (50X) (10 ML)</li>
+                    <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">R&D Systems</span></li>
+                    <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span><span class="hui ng-scope" ng-if="rshop.tips_id!=0" style="font-size:10px;">惠</span><span class="zhe ng-binding ng-scope" ng-if="rshop.tips_id!=0" style="font-size:10px;">65折</span></li>
+                    <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥702</span><span class="t3 ng-binding ng-scope" ng-if="rshop.is_ask_price=='0'&amp;&amp;rshop.tips_id!=0&amp;&amp;rshop.tips_type=='promotion'" style="font-size:12px;">￥1080</span></li>
+                    <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">9</a></span></li>
+                </ul>
+            </div>
+            <div class="sj-r-list ng-scope act" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                <ul>
+                    <li class="sj-l-1of6"><img lazy-src="../../images/68028.jpg" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/68028.jpg" style="width: 200px;height: 185px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                    <li class="sj-l-2of6 ng-binding">StemPro® Neural Supplement</li>
+                    <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">GIBCO</span></li>
+                    <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span><span class="hui ng-scope" ng-if="rshop.tips_id!=0" style="font-size:10px;">惠</span><span class="zhe ng-binding ng-scope" ng-if="rshop.tips_id!=0" style="font-size:10px;">77折</span></li>
+                    <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥1900.36</span><span class="t3 ng-binding ng-scope" ng-if="rshop.is_ask_price=='0'&amp;&amp;rshop.tips_id!=0&amp;&amp;rshop.tips_type=='promotion'" style="font-size:12px;">￥2468</span></li>
+                    <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">10</a></span></li>
+                </ul>
+            </div>
+            <div class="sj-r-list ng-scope act" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                <ul>
+                    <li class="sj-l-1of6"><img lazy-src="../../images/tianyingshenghua.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/tianyingshenghua.png" style="width: 200px;height: 133.33px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                    <li class="sj-l-2of6 ng-binding">DNAquick Plant System 快捷型植物基因组DNA提取系统</li>
+                    <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">天根生化</span></li>
+                    <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span></li>
+                    <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥204.4</span></li>
+                    <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">8</a></span></li>
+                </ul>
+            </div>
+            <div class="sj-r-list ng-scope act" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                <ul>
+                    <li class="sj-l-1of6"><img lazy-src="../../images/tianyingshenghua.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/tianyingshenghua.png" style="width: 200px;height: 133.33px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                    <li class="sj-l-2of6 ng-binding">DNAquick Plant System 快捷型植物基因组DNA提取系统</li>
+                    <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">天根生化</span></li>
+                    <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span></li>
+                    <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥204.4</span></li>
+                    <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">8</a></span></li>
+                </ul>
+            </div>
+            <div class="sj-r-list ng-scope act" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                <ul>
+                    <li class="sj-l-1of6"><img lazy-src="../../images/tianyingshenghua.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/tianyingshenghua.png" style="width: 200px;height: 133.33px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                    <li class="sj-l-2of6 ng-binding">DNAquick Plant System 快捷型植物基因组DNA提取系统</li>
+                    <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">天根生化</span></li>
+                    <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span></li>
+                    <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥204.4</span></li>
+                    <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">8</a></span></li>
+                </ul>
+            </div>
+            <div class="sj-r-list ng-scope act" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                <ul>
+                    <li class="sj-l-1of6"><img lazy-src="../../images/tianyingshenghua.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/tianyingshenghua.png" style="width: 200px;height: 133.33px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                    <li class="sj-l-2of6 ng-binding">DNAquick Plant System 快捷型植物基因组DNA提取系统</li>
+                    <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">天根生化</span></li>
+                    <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span></li>
+                    <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥204.4</span></li>
+                    <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">8</a></span></li>
+                </ul>
+            </div>
+            <div class="sj-r-list ng-scope act" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                <ul>
+                    <li class="sj-l-1of6"><img lazy-src="../../images/tianyingshenghua.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/tianyingshenghua.png" style="width: 200px;height: 133.33px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                    <li class="sj-l-2of6 ng-binding">DNAquick Plant System 快捷型植物基因组DNA提取系统</li>
+                    <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">天根生化</span></li>
+                    <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span></li>
+                    <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥204.4</span></li>
+                    <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">8</a></span></li>
+                </ul>
+            </div>
+            <div class="sj-r-list ng-scope act" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                <ul>
+                    <li class="sj-l-1of6"><img lazy-src="../../images/tianyingshenghua.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/tianyingshenghua.png" style="width: 200px;height: 133.33px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                    <li class="sj-l-2of6 ng-binding">DNAquick Plant System 快捷型植物基因组DNA提取系统</li>
+                    <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">天根生化</span></li>
+                    <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span></li>
+                    <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥204.4</span></li>
+                    <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">8</a></span></li>
+                </ul>
+            </div>
+        </div>
+        <!--分页-->
+        <div class="page-box box ng-binding ng-scope" ng-if="pageNum>1" style="">
+            <a href="javascript:;" ng-click="pageclick(nowpageNum-1)">上一页</a>
+            <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope act">1</span>
+            <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">2</span>
+            <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">3</span>
+            <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">4</span>
+            <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">5</span>
+            <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">6</span>
+            <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">7</span>
+            <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">8</span>
+            <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">9</span>
+            <span ng-repeat="page in pageboxs" ng-click="pageclick(page)" ng-class="{act:page==nowpageNum}" class="ng-binding ng-scope">10</span>
+            <a class="act" href="javascript:;" ng-click="pageclick(nowpageNum*1+1)">下一页</a>
+            跳到<input type="number" ng-model="nowpageNum2" width="20px;" class="ng-pristine ng-untouched ng-valid ng-not-empty">/134页<button ng-click="pageclick(nowpageNum2)">确定</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

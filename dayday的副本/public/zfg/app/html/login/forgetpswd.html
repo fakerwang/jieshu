@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>忘记密码</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+</head>
+<body>
+        <div class="logo3-box box clearfix">
+            <div class="logo">
+                <a href="../index/home.html"><img src="../../images/corelogo.png"></a>
+            </div>
+        </div>
+
+        <div class="page ng-scope" ng-view="" style="">
+            <div class="box wjmm-box ng-scope">
+                <ul>
+                    <li><label>手机号码：</label><input type="text"  placeholder="请输入手机号码" class="ng-pristine ng-untouched ng-valid ng-empty"></li>
+                    <li><label>验证码：</label><input  style="width: 170px" type="text" placeholder="短信验证码" class="ng-pristine ng-untouched ng-valid ng-empty"><input type="button" id="btnSendCode2" ng-click="sendMessage2(wjphone)" value="获取验证码"></li>
+                    <li><label>新密码：</label><input type="password"  placeholder="请输入密码" class="ng-pristine ng-untouched ng-valid ng-empty"></li>
+                    <li><label>再次输入密码：</label><input type="password"  placeholder="请输入密码" class="ng-pristine ng-untouched ng-valid ng-empty"></li>
+                    <li><label>&nbsp;</label><button ng-click="wjmmbtn(wjphone,wjcode,wjpwd,wjpwd2)">重置密码</button></li>
+                </ul>
+            </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!--支付服务-->
+<div class="page ng-scope">
+    <div class="mainbox bg-f5 clearfix pad-b70 pad-t40 ng-scope">
+        <div class="box">
+
+            <!--左侧服务-->
+            <div class="main-leftbox nav3">
+
+
+                <div class="nav3-list ng-scope act" ng-class="{act:$index==bzzxact2}" ng-repeat="fs in footer">
+                    <span class="act ng-binding" dbclick2="">买家服务</span>
+                    <ul>
+                        <li class="act2 ng-scope" val="192" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="gwzn.html"tit=购物指南 class="ng-binding">购物指南</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="193" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="pssm.html"tit=配送服务 class="ng-binding">配送服务</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide">
+                                <li val="227" ng-class="{act:fs2.html_id==bzzxact}" ng-repeat="fs2 in fs1.htmlBeans" class="ng-scope">
+                                    <a href="pssm.html" tit=配送说明 class="ng-binding">配送说明</a></li>
+                                <li val="228" ng-class="{act:fs2.html_id==bzzxact}" ng-repeat="fs2 in fs1.htmlBeans" class="ng-scope">
+                                    <a href="qssm.html" tit=签收说明 class="ng-binding">签收说明</a></li>
+                                <li val="229" ng-class="{act:fs2.html_id==bzzxact}" ng-repeat="fs2 in fs1.htmlBeans" class="ng-scope">
+                                    <a href="psyc.html"tit=配送异常 class="ng-binding">配送异常</a></li>
+                                <li val="230" ng-class="{act:fs2.html_id==bzzxact}" ng-repeat="fs2 in fs1.htmlBeans" class="ng-scope">
+                                    <a href="thhgz.html"tit=退换货规则 class="ng-binding">退换货规则</a></li>
+                                <li val="231" ng-class="{act:fs2.html_id==bzzxact}" ng-repeat="fs2 in fs1.htmlBeans" class="ng-scope">
+                                    <a href="yfsm.html"tit=运费说明 class="ng-binding">运费说明</a></li>
+                            </ul>
+                        </li>
+                        <li class="act2 ng-scope act" val="194" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="zffw.html"tit=支付服务 class="ng-binding">支付服务</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="195" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="mjcjwt.html"tit=常见问题 class="ng-binding">常见问题</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav3-list ng-scope" ng-class="{act:$index==bzzxact2}" ng-repeat="fs in footer">
+                    <span class="act ng-binding" dbclick2="">商家服务</span>
+                    <ul>
+                        <li class="act2 ng-scope " val="197" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="sjzz.html"tit=商家资质 class="ng-binding">商家资质</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="198" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="rzzn.html"tit=入驻指南 class="ng-binding">入驻指南</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="199" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="sjsz.html"tit=商家守则 class="ng-binding">商家守则</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="200" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="cjwt.html"tit=常见问题 class="ng-binding">常见问题</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav3-list ng-scope" ng-class="{act:$index==bzzxact2}" ng-repeat="fs in footer">
+                    <span class="act ng-binding" dbclick2="">战略合作</span>
+                    <ul>
+                        <li class="act2 ng-scope" val="197" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="sjrz.html" tit=商家入驻 class="ng-binding">商家入驻</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="198" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="hzhb.html" tit=合作伙伴 class="ng-binding">合作伙伴</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="199" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="wdjm.html" tit=网点加盟 class="ng-binding">网点加盟</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav3-list ng-scope" ng-class="{act:$index==bzzxact2}" ng-repeat="fs in footer">
+                    <span class="act ng-binding" dbclick2="">快捷查询</span>
+                    <ul>
+                        <li class="act2 ng-scope" val="197" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="cxhd.html" tit=活动促销 class="ng-binding">活动促销</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope " val="198" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="qygsq.html" tit=企业购申请 class="ng-binding">企业购申请</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="199" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="xyfsq.html" tit=信用付申请 class="ng-binding">信用付申请</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav3-list ng-scope" ng-class="{act:$index==bzzxact2}" ng-repeat="fs in footer">
+                    <span class="act ng-binding" dbclick2="">关于我们</span>
+                    <ul>
+                        <li class="act2 ng-scope" val="197" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="gsjj.html" tit=公司简介 class="ng-binding">公司简介</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="197" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="lxwm.html" tit=联系我们 class="ng-binding">联系我们</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="198" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="jrwm.html" tit=加入我们 class="ng-binding">加入我们</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="199" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="ystl.html" tit=隐私条例 class="ng-binding">隐私条例</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!--右侧 -->
+            <div class="main-rightbox jianjie" style="padding:0px;">
+                <div class="bzzx-box bg-fff pad30 ">
+                    <div class="dd-tit ng-binding">支付服务</div>
+                    <div class="center ng-binding" ng-bind-html="bzzxtxt">
+                        <p><strong><span style="font-size:29px;font-family:'微软雅黑','sans-serif';color:#BFBFBF;background:white"></span></strong></p><p style="margin-bottom: 10px; white-space: normal;"><span style="color: rgb(127, 127, 127); font-family: 微软雅黑, sans-serif; font-size: 14px;">用户可以选择以下方式进行支付：</span><br></p><p><img style="width: 658px;height: 101px;" src="http://www.valubio.com//sw_images/ueditor/20170808/1502175327483075209.jpg" title="1502175327483075209.jpg" alt="11.jpg"><strong><span style="font-size:29px;font-family:'微软雅黑','sans-serif';color:#BFBFBF;background:white"><br></span></strong><span style="color: rgb(127, 127, 127); font-family: 微软雅黑, sans-serif; font-size: 14px;">请在订单提交后1小时内完成支付，否则订单将会自动取消。</span></p><p><span style="color: rgb(127, 127, 127); font-family: 微软雅黑, sans-serif; font-size: 14px;"><br></span></p><p><strong style="white-space: normal;"><span style="font-family: 微软雅黑, sans-serif; color: rgb(127, 127, 127);">1.</span></strong><strong style="white-space: normal;"><span style="font-family: 微软雅黑, sans-serif; color: rgb(127, 127, 127);">余额支付</span></strong></p><p><strong style="white-space: normal;"><span style="font-family: 微软雅黑, sans-serif; color: rgb(127, 127, 127);"><br></span></strong></p><p><span style=";font-family:'微软雅黑','sans-serif';color:gray;background:white"><span style="color: rgb(127, 127, 127); font-family: 微软雅黑, sans-serif; font-size: 14px;">使用账户内的现金余额进行支付，余额不足时，需先充值再进行支付。</span></span></p><p><span style=";font-family:'微软雅黑','sans-serif';color:gray;background:white"><span style="color: rgb(127, 127, 127); font-family: 微软雅黑, sans-serif; font-size: 14px;"><br></span></span></p><p><span style=";font-family:'微软雅黑','sans-serif';color:gray;background:white"><span style="color: rgb(127, 127, 127); font-family: 微软雅黑, sans-serif; font-size: 14px;">使用余额支付前，需前往“个人中心 - 账户设置 - 安全设置”中，设置“钱包支付密码”后方可使用。</span></span></p><p><br></p><p><img src="http://www.valubio.com//sw_images/ueditor/20170808/1502175334665026706.jpg" title="1502175334665026706.jpg" alt="22.jpg" width="669" height="194" style="width: 669px; height: 194px;"></p><p><br></p><p style="white-space: normal;"><strong><span style="font-family: 微软雅黑, sans-serif; color: rgb(127, 127, 127);">2.</span></strong><strong><span style="font-family: 微软雅黑, sans-serif; color: rgb(127, 127, 127);">信用支付</span></strong></p><p style="white-space: normal;"><strong><span style="font-family: 微软雅黑, sans-serif; color: rgb(127, 127, 127);"><br></span></strong></p><p style="white-space: normal;"><span style="font-family: 微软雅黑, sans-serif; color: gray; background: white;"><span style="color: rgb(127, 127, 127); font-size: 14px;">已申请“信用付”的客户，可在额度内进行信用支付。</span></span></p><p style="white-space: normal;"><span style="font-family: 微软雅黑, sans-serif; color: gray; background: white;"><span style="color: rgb(127, 127, 127); font-size: 14px;"><br></span></span></p><p style="white-space: normal;"><span style="font-family: 微软雅黑, sans-serif; color: gray; background: white;"><span style="color: rgb(127, 127, 127); font-size: 14px;">用户在使用<span style="color: rgb(127, 127, 127); font-family: 微软雅黑, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">信用</span>支付前，需前往“个人中心—账户设置—安全设置”中，设置“信用额支付密码”后方可使用。</span></span></p><p style="white-space: normal;"><span style="font-family: 微软雅黑, sans-serif; color: gray; background: white;"><span style="color: rgb(127, 127, 127); font-size: 14px;"><br></span></span></p><p><img src="http://www.valubio.com//sw_images/ueditor/20170808/1502175351125081323.jpg" title="1502175351125081323.jpg" alt="33.jpg" width="670" height="197" style="width: 670px; height: 197px;"></p><p><br></p><p><span style="color: rgb(127, 127, 127); font-family: 微软雅黑, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">“<span style="color: rgb(127, 127, 127); font-family: 微软雅黑, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">信用付</span>”是沃鎏波洱针对企业用户推出的全新支付方式，来自<span style="color: rgb(127, 127, 127); font-family: 微软雅黑, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">“先消费，后付款”的<span style="color: rgb(127, 127, 127); font-family: 微软雅黑, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">概念</span></span>。</span></p><p><span style="color: rgb(127, 127, 127); font-family: 微软雅黑, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);"><br></span></p><p><span style="color: rgb(127, 127, 127); font-family: 微软雅黑, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">使用“信用付”进行付款，可以享受账期内延后付款或分期付款服务，且在一个月内免息。</span></p><p><br></p><p style="white-space: normal;"><strong><span style="font-family: 微软雅黑, sans-serif; color: rgb(127, 127, 127);">3.银行卡支付</span></strong></p><p style="white-space: normal;"><strong><span style="font-family: 微软雅黑, sans-serif; color: rgb(127, 127, 127);"><br></span></strong></p><p style="white-space: normal;"><span style="font-family: 微软雅黑, sans-serif; color: gray; background: white;"><span style="color: rgb(127, 127, 127); font-size: 14px;">用户可关联自身的银行卡，通过银联进行在线支付。</span></span></p><p><br></p><p style="white-space: normal;"><strong><span style="font-family: 微软雅黑, sans-serif; color: rgb(127, 127, 127);">4.第三方支付</span></strong></p><p style="white-space: normal;"><strong><span style="font-family: 微软雅黑, sans-serif; color: rgb(127, 127, 127);"><br></span></strong></p><p style="white-space: normal;"><span style="font-family: 微软雅黑, sans-serif; color: gray; background: white;"><span style="color: rgb(127, 127, 127); font-size: 14px;">用户可选择使用“<span style="color: rgb(127, 127, 127); font-family: 微软雅黑, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">微信支付</span>”或“<span style="color: rgb(127, 127, 127); font-family: 微软雅黑, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">支付宝支付</span>”。</span></span></p><p><br></p><p><span style="background-image: initial; background-attachment: initial; background-color: white; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><br></span><br></p><p><br></p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

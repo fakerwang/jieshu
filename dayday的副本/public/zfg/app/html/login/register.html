@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+</head>
+<body>
+        <div class="tck sign">
+            <i></i>
+            <div class="sign-box reg-box">
+                <p class="tit">
+                    <span>会员登录</span>
+                    <span class="act">注册</span>
+                    <i class="tck-btn">×</i>
+                </p>
+                <ul class="reg-ul">
+                    <li>
+                        <label>手机号码：</label>
+                        <input type="text" id="phoneNum" class="" placeholder="请输入手机号码">
+                        <p id="regphone"><!--请输入规范的手机号--></p>
+                    </li>
+                    <li>
+                        <label>验证码：</label>
+                        <input type="text" style="width: 170px;" class="" placeholder="短信验证码">
+                        <input type="button" id="btnSendCode" value="获取验证码">
+                        <p><!--请输入正确的验证码--></p>
+                    </li>
+                    <li>
+                        <label>密码：</label>
+                        <input type="password" name="password" class="" placeholder="请输入6-20位字母数字的组合">
+                        <p id="regpwd"><!--请输入规范的密码--></p>
+                    </li>
+                    <li>
+                        <label>确认密码：</label>
+                        <input type="password" name="password" class="" placeholder="请再次输入密码">
+                        <p id="regpwd2"><!--2次密码不一致--></p>
+                    </li>
+                    <li>
+                        <label>推荐码：</label>
+                        <input type="text" class="" placeholder="非必填选项">
+                        <p id="referralcode"><!--请输入规范的手机号--></p>
+                    </li>
+                    <li class="mb-30">
+                        <label>&nbsp;</label>
+                       <div class="fwtk">
+                           <span class="act"></span> 我已同意沃鎏波洱的
+                                <a target="_blank" href="core.html#rule?act=4&tit=用户注册协议">《用户注册协议》</a>
+                       </div>
+                    </li>
+                    <li>
+                        <label>&nbsp;</label>
+                        <button>注册</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</body>
+</html>

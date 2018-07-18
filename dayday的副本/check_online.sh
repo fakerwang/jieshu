@@ -1,0 +1,1 @@
+ curl -g 'http://daylive.tstmobile.com/api/cli/check_online'

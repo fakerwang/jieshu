@@ -1,0 +1,248 @@
+{:widget('Base/breadcrumbs',[
+[
+['href'=>url('Live/auctioneer'),'text'=>'拍卖师列表'],
+]
+])}
+<div class="page-container">
+    <h3 style="text-align: center;font-size: 30px;">拍卖师详情</h3>
+        <div class="page-container">
+        <div class="row cl">
+            <label class="form-label col-xs-1 col-sm-1"><span class="c-red"></span>拍卖师名：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" name ="nick_name" value="{$re['nick_name']?$re['nick_name']:''}"  id="nick_name" style="width: 50%" />
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-1"><span class="c-red"></span>姓名：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" name ="anchor_name" value="{$re['anchor_name']?$re['anchor_name']:''}"  id="anchor_name" style="width: 50%" />
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-1 col-sm-1"><span class="c-red"></span>手机号：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" name ="anchor_phone" value="{$re['anchor_phone']?$re['anchor_phone']:''}"  id="anchor_phone" style="width: 50%" />
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-1 col-sm-1"><span class="c-red"></span>身份证：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" name="card" class="input-text" value="{$re['card']?$re['card']:''}"  id="card" style="width: 50%"/>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-1 col-sm-1">拍卖师简介：</label>
+            <div class="formControls col-xs-8 col-sm-9"style="width: 50%">
+                <textarea name="company_desc" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="textarealength(this,200)">{$re.anchor_desc}</textarea>
+                <p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-1 col-sm-1"><span class="c-red"></span>拍卖师资质：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <div class="droparea spot" id="logo_img" style="background-image: url('{$re.user_img?$re.user_img:''}');background-size: 220px 160px;" >
+                    <div class="instructions">拍卖师资质</div>
+                    <div id="logo"></div>
+                    <input type="hidden" name="user_img" id="logo_url" value="{$re['user_img']?$re['user_img']:''}" />
+                </div>
+            </div>
+        </div>
+        </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-1 col-sm-1"><span class="c-red"></span>直播历史：</label>
+        <div class="formControls col-xs-11 col-sm-11">
+            <table class="table table-border table-bordered table-hover table-bg table-sort">
+            <thead>
+            <tr class="text-c">
+                <!--<th width="25"><input type="checkbox" name="" value=""></th>-->
+                <th width="30">序号</th>
+                <!--<th width="80">商家名称</th>-->
+                <!--<th width="80">主播姓名</th>-->
+                <!--<th width="80">场控数</th>-->
+                <th width="80">直播类型</th>
+                <th width="80">直播标签</th>
+                <th width="40">标题</th>
+                <th width="90">封面</th>
+                <th width="60">商品数</th>
+                <th width="60">分享数</th>
+                <th width="60">观看数</th>
+                <th width="150">直播时间</th>
+                <!--<th width="70">状态</th>-->
+                <!--<th width="100">操作</th>-->
+            </tr>
+            </thead>
+            <tbody>
+            {volist name="list" id="vo"}
+            <tr class="text-c">
+                <!--<td><input type="checkbox" value="{$vo.apply_id}" name="checkbox"></td>-->
+                <td>{$vo.apply_id}</td>
+                <!--<td>{$vo.gl_merchants_name}</td>-->
+                <!--<td>{$vo.anchor_name}</td>-->
+                <!--<td>{$vo.control_num}</td>-->
+                <td>
+                    {switch name=$vo['status'] }
+                    {case value="1" }展销{/case}
+                    {case value="2" }售卖{/case}
+                    {case value="3" }拍卖{/case}
+                    {/switch}
+                </td>
+                <td>{$vo.tag}</td>
+                <td>{$vo.title}</td>
+                <td><img src="{$vo.cover_img}" style="width:50px; height:50px; border-radius:25px;"></td>
+                <td>{$vo.goods_id_num}</td>
+                <td>{$vo.share}</td>
+                <td>{$vo.watch_nums}</td>
+                <td>
+                    {$vo.start_time|date="Y-m-d H:i:s",###} - {$vo.end_time|date="Y-m-d H:i:s",###}
+                </td>
+
+            </tr>
+            {/volist}
+            </tbody>
+        </table>
+        </div>
+    </div>
+    <div style="text-align:center">
+            <span>
+                 {$list->render()}
+            </span>
+    </div>
+</div>
+<script type="text/javascript">
+    function getChecked() {
+        var gids = new Array();
+        $.each($('input[name="checkbox"]:checked'), function(i, n){
+            gids.push( $(n).val() );
+        });
+        return gids;
+    }
+    function datadel(kid){
+        kid = kid ? kid : getChecked();
+        kid = kid.toString();
+        console.log(kid);
+        if(kid == ''){
+            layer.msg('你没有选择任何选项！', {offset: 95,shift: 6});
+            return false;
+        }
+        layer.confirm('确认要删除吗？',function(index){
+            $.post("{:url('Apply/del_member')}", {ids:kid}, function(data){
+                if( data.status == 'ok' ){
+                    layer.msg(data.info,{icon:1,time:1000});
+                    window.location.href = data.url;
+                }else{
+                    layer.msg(data.info,{icon:1,time:1000});
+                }
+            },'json');
+        })
+    }
+    /*用户-添加*/
+    function member_add(title,url,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*用户-查看*/
+    function member_show(title,url,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*用户-停用*/
+    function member_stop(obj,id){
+        layer.confirm('确认要停用吗？',function(index){
+            $.post("{:url('Apply/change_stop_status')}",{id:id},function(data){
+                if(data.info == 1){
+                    $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="member_start(this,'+id+')" href="javascript:;" title="启用"><i class="Hui-iconfont">&#xe6e1;</i></a>');
+                    $(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已停用</span>');
+                    $(obj).remove();
+                    layer.msg('已停用!',{icon: 5,time:1000});
+                }
+            },'json')
+        });
+    }
+
+    /*用户-启用*/
+    function member_start(obj,id){
+        layer.confirm('确认要启用吗？',function(index){
+            $.post("{:url('Apply/change_stop_status')}",{id:id},function(data){
+                if(data.info == 2){
+                    $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="member_stop(this,'+id+')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a>');
+                    $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已启用</span>');
+                    $(obj).remove();
+                    layer.msg('已启用!',{icon: 6,time:1000});
+                }
+            },'json');
+
+        });
+    }
+    /*用户-编辑*/
+    function member_edit(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+    function become_Anchor(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*密码-修改*/
+    function change_password(title,url,id,w,h){
+        layer_show(title,url,w,h);
+    }
+    /*用户-删除*/
+    function del(obj,id){
+        layer.confirm('确认要删除吗？',function(index){
+            $.post("{:url('Apply/del_Member')}", {ids:id}, function(data){
+                if( data.status == 'ok' ){
+                    $(obj).parents("tr").remove();
+                    layer.msg('已删除!',{icon:1,time:1000});
+                }else{
+                    layer.msg(data.info,{icon:5,time:1000});
+                }
+            },'json');
+        });
+    }
+
+    /*用户-删除*/
+    function changeType(id,obj){
+        layer.confirm('确认要改变状态，变成导师吗？',function(index){
+            $.post("{:url('Member/change_type')}", {ids:id}, function(data){
+                if( data.status == 'ok' ){
+                    $(obj).parents("tr").remove();
+                    layer.msg('已变更为导师!',{icon:1,time:1000});
+                }else{
+                    layer.msg(data.info,{icon:5,time:1000});
+                }
+            },'json');
+        });
+    }
+    function shengji(id,v) {
+        layer.msg('选择升级的角色类型', {
+            time: 0 ,//不自动关闭
+            shadeClose:false
+            , btn: ['主播', '商家','关闭']
+            , yes: function (index) {
+                layer.close(index);
+                var url = '/admin/member/become_anchor/member_id/'+id;
+                become_Anchor(v+'升级为主播',url,'4','500','300');
+            },
+            btn2:function(index){
+                var url = '/admin/member/add_merchants/member_id/'+id;
+                become_Anchor(v+'升级为商家',url,'4','800','700');
+                layer.close(index);
+            },
+            btn3:function(index){
+                layer.close(index);
+            }
+        });
+    }
+    /*图片-发布*/
+    function change_review(obj,id){
+        layer.confirm('确认要操作吗？',function(index){
+            $.post("{:url('Live/change_review')}",{id:id},function(data){
+                console.log(data);
+                if(data.data==2){
+                    $(obj).parents("td").html('<u><a href="javascript:;;" onClick="change_review(this,'+id+')"><span class="label label-success radius">已审核</span></a></u>');
+                    layer.msg('操作成功!',{icon: 6,time:1000});
+                }else if(data.data == 0){
+                    $(obj).parents("td").html('<u><a href="javascript:;;" onClick="change_review(this,'+id+')"><span class="label label-defaunt radius">未审核</span></a></u>');
+                    layer.msg('操作成功!',{icon: 6,time:1000});
+                }
+            },'json')
+        });
+    }
+</script>

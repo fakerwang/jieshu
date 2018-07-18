@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<LINK rel="Bookmark" href="/favicon.ico" >
+	<LINK rel="Shortcut Icon" href="/favicon.ico" />
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="/lib/html5.js"></script>
+	<script type="text/javascript" src="/lib/respond.min.js"></script>
+	<script type="text/javascript" src="/lib/PIE_IE678.js"></script>
+	<![endif]-->
+	<!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
+	<link rel="stylesheet" type="text/css" href="/static/h-ui/css/H-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="/static/h-ui.admin/css/H-ui.admin.css" />
+	<link rel="stylesheet" type="text/css" href="/static/Hui-iconfont/1.0.7/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="/static/icheck/icheck.css" />
+	<link rel="stylesheet" type="text/css" href="/static/h-ui.admin/skin/default/skin.css" id="skin" />
+	<link rel="stylesheet" type="text/css" href="/static/h-ui.admin/css/style.css" />
+	<script src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<!--[if IE 6]>
+	<script>DD_belatedPNG.fix('*');</script>
+	<![endif]-->
+	<title>{$system['title']}-后台管理系统</title>
+</head>
+
+<body>
+<div class="page-container">
+	<div class="text-l">
+		<form class="search"  method="get">
+			<input name="p" value="" hidden>
+			<span class="select-box" style="width:150px">
+             <select name="wid_hei" onchange="area_linke1(this.value)" class="select">
+                        <option value="">请选择</option>
+                        {volist name="list" id="vo"}
+                            <option value="{$vo.model}" selected>{$vo.model}</option>
+				 	{/volist}
+			 </select>
+            </span>
+			<input name="p" value="" hidden>
+			<span class="select-box" style="width:150px">
+           	<select name="wid_hei" onchange="area_linke1(this.value)" class="select">
+                        <option value="">请选择</option>
+                        {volist name="list" id="vo"}
+                            <option value="{$vo.wid_hei}" selected>{$vo.wid_hei}</option>
+				 	{/volist}
+			 </select>
+            </span>
+			<!--<input name="p" value="" hidden>-->
+			<!--<span class="select-box" style="width:150px">-->
+            <!--<select name="is_type"  class="select select-box inlin" id="is_type" style="width:120px">-->
+                <!--<option value="">请选择状态</option>-->
+                <!--<option value="1" {if condition="$Request.get.is_type eq '1'"}selected{/if}>未使用</option>-->
+				<!--<option value="2" {if condition=" $Request.get.is_type eq '2'"}selected{/if}>使用中</option>-->
+				<!--<option value="3" {if condition="$Request.get.is_type eq '3'"}selected{/if}>已选中</option>-->
+            <!--</select>-->
+            <!--</span>-->
+			<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+		</form>
+	</div>
+	<div class="mt-20">
+		<table class="table table-border table-bordered table-hover table-bg table-sort">
+			<thead>
+			<tr class="text-c">
+				<th width="80">序号</th>
+				<th width="100">型号</th>
+				<th width="100">大尺寸</th>
+				<th width="100">颜色</th>
+				<th width="40">支持触碰</th>
+				<th width="80">图片</th>
+				<th width="80">租用单价(单位)</th>
+				<!--<th width="70">操作</th>-->
+				<th width="25">操作</th>
+			</tr>
+			</thead>
+			<tbody>
+			{volist name="list" id="vo"}
+			<tr class="text-c">
+				<td>{$vo.screen_class_id}</td>
+				<td>{$vo.model}</td>
+				<td>{$vo.wid_hei}</td>
+				<td>{$vo.screen_color}</td>
+				<td>
+					{switch name=$vo['touch'] }
+					{case value="0" }是{/case}
+					{case value="1" }否{/case}
+					{/switch}
+				</td>
+				<td><img src="{$vo.img}" style="width:50px; height:50px; border-radius:25px;"></td>
+				<td>{$vo.screen_price}</td>
+				<td class="td-manage">
+					<input type="checkbox" value="{$vo.screen_id}" name="checkbox">
+				</td>
+			</tr>
+			{/volist}
+			</tbody>
+		</table>
+		<div class="modal-footer" >
+			<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			<button type="button" class="btn btn-primary"   onclick="dataadd()"  value="">保存</button>
+		</div>
+	</div>
+	<div style="text-align:center">
+            <span>
+                 {$page}
+            </span>
+	</div>
+</div>
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript">
+    // $(document).ready(function(){
+    //     var  content ;
+    //     KindEditor.ready(function(K) {
+    //         content = K.create('#content',{
+    //             allowFileManager : true,
+    //             uploadJson:"{:url('Tools/upload',['dirname'=>'goods'])}"
+    //         });
+    //     });
+    //
+    //     KindEditor.ready(function(K) {
+    //         K.create();
+    //         var editor = K.editor({
+    //             allowFileManager : true,
+    //             uploadJson:"{:url('Tools/upload',['dirname'=>'goods'])}"
+    //             //sdl:false
+    //         });
+    //         K('#uparea1').click(function() {
+    //             console.log(1);
+    //             editor.loadPlugin('image', function() {
+    //                 editor.plugin.imageDialog({
+    //                     imageUrl : K('#image_1').val(),
+    //                     clickFn : function(url, title, width, height, border, align) {
+    //                         console.log(url);
+    //                         $('#image1').css('background-image','url('+url+')').css('background-size','220px 160px');
+    //                         K('#image_1').val(url);
+    //                         // K('#getImgUrl').val(url);
+    //                         editor.hideDialog();
+    //                     }
+    //                 });
+    //             });
+    //         });
+    //
+    //         K('#uparea2').click(function() {
+    //             editor.loadPlugin('image', function() {
+    //                 editor.plugin.imageDialog({
+    //                     imageUrl : K('#image_2').val(),
+    //                     clickFn : function(url, title, width, height, border, align) {
+    //                         console.log(url);
+    //                         $('#image2').css('background-image','url('+url+')').css('background-size','220px 160px');
+    //                         K('#image_2').val(url);
+    //                         // K('#getImgUrl').val(url);
+    //                         editor.hideDialog();
+    //                     }
+    //                 });
+    //             });
+    //         });
+    //
+    //     });
+    //
+    //     $(".submit").click(function(){
+    //         commonAjaxSubmit('','form');
+    //         return false;
+    //     });
+    //
+    //     $("#uparea1").mouseover(function(e){
+    //         $("#big").css({top:e.pageY,right:e.pageX});//鼠标定位一个点
+    //         var img = $('#image_1').val();
+    //         if(img.length !== 0) {
+    //             $("#big").html('<img src="' + $('#image_1').val() + '" width=380 height=300>');
+    //             $("#big").show();        //show：显示
+    //         }
+    //     });
+    //     $("#uparea1").mouseout(function(){
+    //         $("#big").hide();
+    //     });
+    //
+    //
+    //     $('.skin-minimal input').iCheck({
+    //         checkboxClass: 'icheckbox-blue',
+    //         radioClass: 'iradio-blue',
+    //         increaseArea: '20%'
+    //     });
+    // });
+    function area_linke1(value){
+        $.post("{:url('get_area')}", {value:value,type:1}, function(v){
+            $("#shi").html(v);
+        });
+    }
+    function area_linke2(value) {
+        $.post("{:url('get_area')}", {value: value, type: 2}, function (v) {
+            $("#qu").html(v);
+        });
+    }
+    function getChecked(id) {
+        var gids = new Array();
+         var indexs = new Array();
+        $.each($('input[name="checkbox"]:checked'), function(i, n){
+            gids.push( $(n).val() );
+            indexs.push($(n)[0].attributes[0].nodeValue);
+        });
+        console.log(gids);
+        // console.log(indexs);
+        localStorage.setItem("goods_id",gids);
+        return gids;
+    }
+    function dataadd(kid){
+
+        kid = kid ? kid : getChecked();
+        kid = kid.toString();
+        if(kid == ''){
+            layer.msg('你没有选择任何选项！', {offset: 95,shift: 6});
+            return false;
+        }
+        layer.confirm('确认要添加商品吗？',function(index){
+            $.post("{:url('Apply/add_screen')}", {ids:kid}, function(data){
+                if( data.status == 'ok' ){
+                    layer.msg(data.info,{icon:1,time:1000});
+                }else{
+                    layer.msg(data.info,{icon:1,time:1000});
+                }
+            },'json');
+        })
+    }
+
+
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

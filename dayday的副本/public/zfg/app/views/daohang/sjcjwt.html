@@ -1,0 +1,143 @@
+<!--商家-常见问题-->
+<div class="page ng-scope">
+    <div class="mainbox bg-f5 clearfix pad-b70 pad-t40 ng-scope">
+        <div class="box">
+
+            <!--左侧服务-->
+            <div class="main-leftbox nav3">
+
+
+                <div class="nav3-list ng-scope" ng-class="{act:$index==bzzxact2}" ng-repeat="fs in footer">
+                    <span class="act ng-binding" dbclick2="">买家服务</span>
+                    <ul>
+                        <li class="act2 ng-scope" val="192" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="gwzn.html"tit=购物指南 class="ng-binding">购物指南</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="193" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="pssm.html"tit=配送服务 class="ng-binding">配送服务</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide">
+                                <li val="227" ng-class="{act:fs2.html_id==bzzxact}" ng-repeat="fs2 in fs1.htmlBeans" class="ng-scope">
+                                    <a href="pssm.html" tit=配送说明 class="ng-binding">配送说明</a></li>
+                                <li val="228" ng-class="{act:fs2.html_id==bzzxact}" ng-repeat="fs2 in fs1.htmlBeans" class="ng-scope">
+                                    <a href="qssm.html" tit=签收说明 class="ng-binding">签收说明</a></li>
+                                <li val="229" ng-class="{act:fs2.html_id==bzzxact}" ng-repeat="fs2 in fs1.htmlBeans" class="ng-scope">
+                                    <a href="psyc.html"tit=配送异常 class="ng-binding">配送异常</a></li>
+                                <li val="230" ng-class="{act:fs2.html_id==bzzxact}" ng-repeat="fs2 in fs1.htmlBeans" class="ng-scope">
+                                    <a href="thhgz.html"tit=退换货规则 class="ng-binding">退换货规则</a></li>
+                                <li val="231" ng-class="{act:fs2.html_id==bzzxact}" ng-repeat="fs2 in fs1.htmlBeans" class="ng-scope">
+                                    <a href="yfsm.html"tit=运费说明 class="ng-binding">运费说明</a></li>
+                            </ul>
+                        </li>
+                        <li class="act2 ng-scope" val="194" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="zffw.html"tit=支付服务 class="ng-binding">支付服务</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="195" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="mjcjwt.html"tit=常见问题 class="ng-binding">常见问题</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav3-list ng-scope act" ng-class="{act:$index==bzzxact2}" ng-repeat="fs in footer">
+                    <span class="act ng-binding" dbclick2="">商家服务</span>
+                    <ul>
+                        <li class="act2 ng-scope " val="197" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="sjzz.html"tit=商家资质 class="ng-binding">商家资质</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope " val="198" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="rzzn.html"tit=入驻指南 class="ng-binding">入驻指南</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="199" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="sjsz.html"tit=商家守则 class="ng-binding">商家守则</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope act" val="200" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="cjwt.html"tit=常见问题 class="ng-binding">常见问题</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav3-list ng-scope" ng-class="{act:$index==bzzxact2}" ng-repeat="fs in footer">
+                    <span class="act ng-binding" dbclick2="">战略合作</span>
+                    <ul>
+                        <li class="act2 ng-scope" val="197" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="sjrz.html" tit=商家入驻 class="ng-binding">商家入驻</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="198" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="hzhb.html" tit=合作伙伴 class="ng-binding">合作伙伴</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="199" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="wdjm.html" tit=网点加盟 class="ng-binding">网点加盟</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav3-list ng-scope" ng-class="{act:$index==bzzxact2}" ng-repeat="fs in footer">
+                    <span class="act ng-binding" dbclick2="">快捷查询</span>
+                    <ul>
+                        <li class="act2 ng-scope" val="197" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="cxhd.html" tit=活动促销 class="ng-binding">活动促销</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope " val="198" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="qygsq.html" tit=企业购申请 class="ng-binding">企业购申请</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="199" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="xyfsq.html" tit=信用付申请 class="ng-binding">信用付申请</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav3-list ng-scope" ng-class="{act:$index==bzzxact2}" ng-repeat="fs in footer">
+                    <span class="act ng-binding" dbclick2="">关于我们</span>
+                    <ul>
+                        <li class="act2 ng-scope" val="197" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="gsjj.html" tit=公司简介 class="ng-binding">公司简介</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="197" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="lxwm.html" tit=联系我们 class="ng-binding">联系我们</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="198" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="jrwm.html" tit=加入我们 class="ng-binding">加入我们</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="199" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="ystl.html" tit=隐私条例 class="ng-binding">隐私条例</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+            <!--右侧 -->
+            <div class="main-rightbox jianjie" style="padding:0px;">
+                <div class="bzzx-box bg-fff pad30 ">
+                    <div class="dd-tit ng-binding">常见问题</div>
+                    <div class="center ng-binding">
+                        <p class="cjwt-bt mar-b20">用户注册<p class="cjwt-ml">如何注册成为商家？</p> <p class="cjwt-nr"><span> <img style="width: 543px;height: 37px;" src="../../images/cjwt.png" alt=""></span></p></p>
+                        <p class="cjwt-bt mar-b15 mar-t15">商品相关<p class="cjwt-ml">如何上传商品？</p><p class="cjwt-nr">在商品分类添加（根据合同里所交履约保证金的类别，已事先添加好分类，可供您选择）。</p> </p>
+                        <p class="cjwt-bt mar-b15 mar-t15">订单处理<p class="cjwt-ml">订单如何发货？</p><p class="cjwt-nr">①沃鎏波洱发货：收货地址在沃鎏波洱配送范围内的订单，由沃鎏波洱仓储配送，也可由商家自行选择第三方物流配送。<br>②第三方物流发货：部分偏远地区和耗时较长的大型仪器设备耗材等由第三方物流承运。</p>
+                        <p class="cjwt-ml">如何取消订单？<p class="cjwt-nr">未接单：若由于订单暂时无货或订单货期过长需要取消订单，需请商家主动联系买家进行沟通。若买家同意取消，则由买家直接取消订单。<br>已接单：商家和买家达成一致后，可联系沃鎏波洱客服协助取消订单。</p></p>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

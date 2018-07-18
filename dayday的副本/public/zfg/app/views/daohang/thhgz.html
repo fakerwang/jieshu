@@ -1,0 +1,187 @@
+<!--退换货规则-->
+<div class="page ng-scope">
+    <div class="mainbox bg-f5 clearfix pad-b70 pad-t40 ng-scope">
+        <div class="box">
+
+            <!--左侧服务-->
+            <div class="main-leftbox nav3">
+
+
+                <div class="nav3-list ng-scope act" ng-class="{act:$index==bzzxact2}" ng-repeat="fs in footer">
+                    <span class="act ng-binding" dbclick2="">买家服务</span>
+                    <ul>
+                        <li class="act2 ng-scope" val="192" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="gwzn.html"tit=购物指南 class="ng-binding">购物指南</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="193" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="pssm.html"tit=配送服务 class="ng-binding">配送服务</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="">
+                                <li val="227" ng-class="{act:fs2.html_id==bzzxact}" ng-repeat="fs2 in fs1.htmlBeans" class="ng-scop">
+                                    <a href="pssm.html" tit=配送说明 class="ng-binding">配送说明</a></li>
+                                <li val="228" ng-class="{act:fs2.html_id==bzzxact}" ng-repeat="fs2 in fs1.htmlBeans" class="ng-scope">
+                                    <a href="qssm.html" tit=签收说明 class="ng-binding">签收说明</a></li>
+                                <li val="229" ng-class="{act:fs2.html_id==bzzxact}" ng-repeat="fs2 in fs1.htmlBeans" class="ng-scope">
+                                    <a href="psyc.html"tit=配送异常 class="ng-binding">配送异常</a></li>
+                                <li val="230" ng-class="{act:fs2.html_id==bzzxact}" ng-repeat="fs2 in fs1.htmlBeans" class="ng-scope act">
+                                    <a href="thhgz.html"tit=退换货规则 class="ng-binding">退换货规则</a></li>
+                                <li val="231" ng-class="{act:fs2.html_id==bzzxact}" ng-repeat="fs2 in fs1.htmlBeans" class="ng-scope">
+                                    <a href="yfsm.html"tit=运费说明 class="ng-binding">运费说明</a></li>
+                            </ul>
+                        </li>
+                        <li class="act2 ng-scope" val="194" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="zffw.html"tit=支付服务 class="ng-binding">支付服务</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="195" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="mjcjwt.html"tit=常见问题 class="ng-binding">常见问题</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav3-list ng-scope" ng-class="{act:$index==bzzxact2}" ng-repeat="fs in footer">
+                    <span class="act ng-binding" dbclick2="">商家服务</span>
+                    <ul>
+                        <li class="act2 ng-scope " val="197" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="sjzz.html"tit=商家资质 class="ng-binding">商家资质</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="198" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="rzzn.html"tit=入驻指南 class="ng-binding">入驻指南</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="199" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="sjsz.html"tit=商家守则 class="ng-binding">商家守则</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="200" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="cjwt.html"tit=常见问题 class="ng-binding">常见问题</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav3-list ng-scope" ng-class="{act:$index==bzzxact2}" ng-repeat="fs in footer">
+                    <span class="act ng-binding" dbclick2="">战略合作</span>
+                    <ul>
+                        <li class="act2 ng-scope" val="197" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="sjrz.html" tit=商家入驻 class="ng-binding">商家入驻</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="198" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="hzhb.html" tit=合作伙伴 class="ng-binding">合作伙伴</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="199" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="wdjm.html" tit=网点加盟 class="ng-binding">网点加盟</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav3-list ng-scope" ng-class="{act:$index==bzzxact2}" ng-repeat="fs in footer">
+                    <span class="act ng-binding" dbclick2="">快捷查询</span>
+                    <ul>
+                        <li class="act2 ng-scope" val="197" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="cxhd.html" tit=活动促销 class="ng-binding">活动促销</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope " val="198" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="qygsq.html" tit=企业购申请 class="ng-binding">企业购申请</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="199" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="xyfsq.html" tit=信用付申请 class="ng-binding">信用付申请</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav3-list ng-scope" ng-class="{act:$index==bzzxact2}" ng-repeat="fs in footer">
+                    <span class="act ng-binding" dbclick2="">关于我们</span>
+                    <ul>
+                        <li class="act2 ng-scope" val="197" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="gsjj.html" tit=公司简介 class="ng-binding">公司简介</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="197" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="lxwm.html" tit=联系我们 class="ng-binding">联系我们</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="198" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="jrwm.html" tit=加入我们 class="ng-binding">加入我们</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                        <li class="act2 ng-scope" val="199" ng-class="{act:fs1.html_id==bzzxact}" ng-repeat="fs1 in fs.htmlBeans">
+                            <a href="ystl.html" tit=隐私条例 class="ng-binding">隐私条例</a>
+                            <ul ng-show="fs1.html_id==bzzxact||fs1.html_id==bzzxact3" class="ng-hide"></ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!--右侧 -->
+            <div class="main-rightbox jianjie" >
+                <div class="bzzx-box bg-fff pad30 ">
+                    <div class="dd-tit ng-binding">退换货规则</div>
+                    <div class="center ng-binding">
+                        <h3 class="thhgz-bt">总则：</h3>
+                        <p class="thhgz-nr">关注客户的购物体验，本着为客户负责的态度，尽最大限度的为客户服务，制定了完善的售后流程，沃鎏波洱承诺符合以下情况，由商品售出之日（以实际收货日期为准）起七天内可以申请退换货。客户可在线提交退货申请或者与沃鎏波洱售后客服联系办理退换货事宜。具体退换货标准如下：
+
+                            <br>1、一般情况下试剂类产品不支持退货。试剂类产品使用后如发现质量问题，需填写由商品厂家提供的检测报告单提供实验数据，由专业的人员和检测机构判断问题归属；<br>2、部分设备器械类产品根据具体情况支持7天内退货；
+                            <br>3、标注为“特殊性产品”不支持退货。</p>
+                        <h3 class="thhgz-bt">退换货规则:</h3>
+                        <p class="thhgz-nr">支持退货的产品，沃鎏波洱承诺符合以下情况，自客户收到商品之日起7日内可以退货，具体退货标准如下：</p>
+                        <table class="thhgz-table">
+                            <tr>
+                                <td>退换类别</td>
+                                <td>具体描述</td>
+                                <td>是否支持7天内退换货</td>
+                                <td>是否收取返回运费</td>
+                                <td>备注</td></tr>
+                            <tr>
+                                <td>商品质量</td>
+                                <td>经由生产厂家指定或者特约售后服务中心检测确认，并出具照片，检测报告，认定商品存在质量瑕疵。</td>
+                                <td>是</td>
+                                <td>否</td>
+                                <td>联系沃鎏波洱售后服务；退货快递须选择我方指定的快递公司。</td></tr>
+                            <tr>
+                                <td>运输破损</td>
+                                <td>运输破损指在运输过程中造成的损坏、泄漏、破碎、污损等，客户24小时内提供能够明显看出商品问题的照片，经我方售后客服人员核查情况属实，认定属于运输破损。</td>
+                                <td>是</td>
+                                <td>否</td>
+                                <td>如果快递人员能够提供相关证明，则将会加快问题的处理；退货快递须选择我方指定的快递公司。</td></tr>
+                            <tr>
+                                <td>平台操作失误</td>
+                                <td>是沃鎏波洱公司员工在制单、出库、分拣、发货等环节上产生的错误。</td>
+                                <td>是</td>
+                                <td>否</td>
+                                <td>退货快递须选择我方指定的快递公司。</td></tr>
+                            <tr>
+                                <td>客户原因</td>
+                                <td>客户个人原因导致的退换货，一般情况不支持退换货，须经我方售后客服人员核实确认。</td>
+                                <td>否</td>
+                                <td>是</td>
+                                <td>快递费用由客户自行承担，若退货商品在退货途中发生泄漏、破损、丢失等情况，由客户自行负责。</td></tr>
+                        </table>
+                        <h3 class="thhgz-bt">退换货说明:</h3>
+                        <p class="thhgz-nr">1、判定实际收货日期以沃鎏波洱快递配送实际到货日期为准。非沃鎏波洱配送的订单，按照第三方物流平台显示的实际到货日期为准。如果第三方物流不能有效返回签收日期，则沃鎏波洱客服根据距离等因素和客户人工确认实际到货日期。<br>2、试剂类及特殊性的商品，一般情况下，不允许退换货；特殊情况，如发生退换货，请您务必将商品的外包装、内带附件、保修卡、说明书、发票等随同商品一起退回。<br>3、不论商家问题、质量问题或者第三方物流运输造成损失引起的退换货，邮费均由买家垫付，我司不接受任何形式的快递到付；质量问题引起退换货，我司承诺邮费之后补偿买家；运输问题造成的损失，经沃鎏波洱核实确认，我司承诺按照第三方物流公司相关规定赔偿客户。</p>
+                        <h3 class="thhgz-bt">以下情况不予办理退换货:</h3>
+                        <p class="thhgz-nr">1、任何非经沃鎏波洱出售的商品，以订货确认单为准；
+                            <br>2、已超过以上受理期限的商品；
+                            <br>3、商品无标签，或标签已无法识别是否属于沃鎏波洱出售的商品；
+                            <br>4、无法提供商品的发票、保修卡等三包凭证或者三包凭证信息与商品不符及被涂改的；
+                            <br>5、密封商品原包装打开，一次性封贴或胶条破损（质量问题除外）；
+                            <br>6、过保商品（质量问题除外）；
+                            <br>7、网站商品图片及信息仅供参考，不属质量问题。因拍摄灯光及不同显示器色差等问题可能造成商品图片与实物有色差，一切以实物为准；
+                            <br>8、由于您技术水平、使用环境限制造成的误报以及实际情况与您描述不符，沃鎏波洱出售的试剂将不予受理申请退货；
+                            <br>9、若退货商品含有赠品，则在退货时，赠品须一同退回；
+                            <br>10、其他依法不应办理退换货的。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

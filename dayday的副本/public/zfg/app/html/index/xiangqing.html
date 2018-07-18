@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+</head>
+<body>
+        <!--主体内容-->
+        <div class="mainbox clearfix ng-scope">
+
+            <!--面包屑-->
+            <div class="mbx-navbox">
+                <div class="mbx-nav">
+                    <div class="mbx-nav-l"><a href="index.html#/">首页</a>
+                        <a href="#/shoplist?gid=1&amp;uuid=1&amp;sortname=试剂" ng-if="shopdetails.l1_name!=''" class="ng-binding ng-scope">试剂</a>
+                        <a href="#/shoplist?gid=18&amp;uuid=18&amp;sortname=蛋白质研究" ng-if="shopdetails.l2_name!=''" class="ng-binding ng-scope">蛋白质研究</a>
+                        <a href="#/shoplist?gid=1263&amp;uuid=1263&amp;sortname=重组蛋白" ng-if="shopdetails.l3_name!=''" class="ng-binding ng-scope">重组蛋白</a>
+                        <a href="#/shoplist?gid=1265&amp;uuid=1265&amp;sortname=重组蛋白产品" ng-if="shopdetails.l4_name!=''" class="ng-binding ng-scope">重组蛋白产品</a>
+                        <a href="javascript:;" class="ng-binding">Recombinant Human Histone Deacetylase 8/HDAC8 Protein</a>
+                    </div>
+                    <div class="mbx-nav-r">
+                        <a class="sc" href="javascript:;" ng-class="{act:shopdetails.merchantsBean.is_collection==1}" ng-click="collection(2,shopdetails.merchantsBean.merchants_id,shopdetails.merchantsBean.collection_id,shopdetails.merchantsBean.is_collection)" dbclick="">收藏店铺</a>
+                        <a target="_blank" class="lx" href="" ng-click="btn()">联系商家</a>
+                        <a href="index.html#/dianpu?mid=1" class="ng-binding">沃鎏波洱</a>
+                    </div>
+                </div>
+            </div>
+            <!---->
+
+            <div class="spxq-box box mar-t60 mar-b80 clearfix">
+                <div class="spxq-imgbox">
+                    <div class="spxq-img-big">
+                        <i><img ng-src="/images/brand/Novus.png" src="../../images/Novus.png"></i>
+                    </div>
+                    <div class="spxq-img-list">
+                        <ul id="spxqimg" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
+                            <div class="owl-wrapper-outer">
+                                <div class="owl-wrapper" style="width: 176px; left: 0px; display: block;">
+                                    <div class="owl-item" style="width: 88px;">
+                                        <li class="item ng-scope" ng-repeat="shopimg in shopdetails.goodsImgBeans" repeat-finish2="owlCarousel()" shopimg="" style="">
+                                            <i><img ng-src="../../images/Novus.png" ng-click="" src="../../images/Novus.png"></i>
+                                        </li>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-controls clickable" style="display: none;">
+                                <div class="owl-pagination">
+                                    <div class="owl-page"><span class=""></span></div>
+                                </div>
+                                <div class="owl-buttons">
+                                    <div class="owl-prev"></div>
+                                    <div class="owl-next"></div>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="spxq-text">
+                    <div class="tit ng-binding">Recombinant Human CD3 gamma Protein</div>
+                    <div class="detaile">
+                        <ul>
+                            <li class="s-d-1of3 ng-scope" ng-if="shopdetails.goods_origin_price!=0&amp;&amp;shopdetails.goods_origin_price!=shopdetails.goods_pc_price" style=""><span class="ng-binding">原价：￥4,350.00</span></li>
+                            <li class="s-d-2of3"><span style="color: rgb(253, 101, 90);" ng-if="shopdetails.is_ask_price=='0'" class="ng-binding ng-scope">现价：￥2,914.50</span></li>
+                            <li class="s-d-1of4"><span class="ng-binding">品牌：Novus</span></li>
+                            <li class="s-d-1of4"><span class="ng-binding">货号：NBP2-59518-10ug</span></li>
+                            <li class="s-d-3of3 ng-hide" ng-show="shopdetails.activityBeans.length!=0" style="">
+                                <span style="color:#666;">促销优惠：</span>
+                            </li>
+                            <li class="s-d-1of4"><span class="ng-binding">销量：3</span><span class="ng-binding">库存：有货</span></li>
+                        </ul>
+                    </div>
+                    <div class="other">
+                        <ul>
+                            <li class="s-o-1of5 clearfix ng-binding"><label>配送：</label>由沃鎏波洱发货，并提供售后服务</li>
+                            <li class="s-o-3of5 clearfix ng-scope" ng-repeat="spec in shopdetails.goodsParameterBeans" style=""><label class="ng-binding">规格：</label><p><span ng-class="{act:spec.goodsParameterBeans.length==1}" ng-repeat="spec2 in spec.goodsParameterBeans" price="0.00" originprice="0.00" val="3062210" ng-click="selgg()" tab="" class="ng-binding ng-scope act">10 ug</span></p></li>
+                            <li class="s-o-4of5"><p class="num mar-r60"><span class="jian" ng-click="count>1?count = count - 1:count=1">-</span><input  onkeydown="if(event.keyCode==13)event.keyCode=9" onkeypress="if ((event.keyCode<48 || event.keyCode>57)) event.returnValue=false" type="number" ng-model="count" ng-blur="blurnum(count)" class="ng-pristine ng-untouched ng-valid ng-not-empty" style=""><span ng-click="count = count + 1" class="jia">+</span></p><button class="gwc" ng-click="shopcart(count,shopdetails.goods_id,shopdetails.merchantsBean.merchants_id)" title="" ng-class="{act:shopdetails.is_supply==0}">加入购物车</button></li>
+                            <li class="s-o-5of5">
+                                <!--<div class="fx" href="javascript:;">-->
+                                    <!--<span>分享</span>-->
+                                    <!--<div class="fx-center">-->
+                                        <!--<div class="bdsharebuttonbox tracking-ad bdshare-button-style0-16" style="float: right;" data-mod="popu_172" data-bd-bind="1512983729634">-->
+                                            <!--<a href="javascript:;" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>-->
+                                            <!--<a href="javascript:;" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间" style="background-position:0 -52px !important"></a>-->
+                                            <!--<a href="javascript:;" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博" style="background-position:0 -104px !important"></a>-->
+                                            <!--<a href="javascript:;" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博" style="background-position:0 -260px !important"></a>-->
+                                            <!--<a href="javascript:;" class="bds_renren" data-cmd="renren" title="分享到人人网" style="background-position:0 -208px !important"></a>-->
+                                            <!--<a href="javascript:;" class="bds_weixin" data-cmd="weixin" title="分享到微信" style="background-position:0 -1612px !important"></a>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <a class="sc" ng-class="{act:shopdetails.is_collection==1}" href="javascript:;" dbclick="" ng-click="collection(1,shopdetails.goods_id,shopdetails.collection_id,shopdetails.is_collection)">收藏</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box clearfix">
+                <div class="main-leftbox">
+                    <div class="dpxq-details">
+                        <div class="tit"> <span class="ng-binding">沃鎏波洱<a target="_blank" href="" ng-click="btn()"><img src="../../icon/lianxishangjia.png"></a></span></div>
+                        <div class="times ng-binding ng-scope" ng-if="shopdetails.merchantsBean.job_start_time!=''">工作时间:9:00~18:00,其他时间请留言</div>
+                        <div class="score clearfix">
+                            <ul>
+                                <li class="ng-binding">5.00<span>商家评分</span></li>
+                                <li class="ng-binding">5.00<span>商品评分</span></li>
+                                <li class="ng-binding">5.00<span>物流评分</span></li>
+                            </ul>
+                        </div>
+                        <div class="btn"><a class="jd" href="index.html#/dianpu?mid=1">进店逛逛</a><a class="sc" href="javascript:;">收藏店铺</a></div>
+                    </div>
+
+                    <div class="rmtj-box mar-t40">
+                        <div class="tit">热门推荐</div>
+                        <div class="sj-r-list ng-scope" ng-repeat="rshop in recshop" style="">
+                            <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=428762"></a>
+                            <ul>
+                                <li class="sj-l-1of6"><img lazy-src="../../images/RDSystems.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/RDSystems.png" style="width: 200px;height: 133.33px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                                <li class="sj-l-2of6 ng-binding">Human/Mouse Rab7a Affinity Purified Polyclonal Ab (25 UG)</li>
+                                <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">R&D Systems</span></li>
+                                <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span><span class="hui ng-scope" ng-if="rshop.tips_id!=0" style="font-size:10px;">惠</span><span class="zhe ng-binding ng-scope" ng-if="rshop.tips_id!=0" style="font-size:10px;">65折</span></li>
+                                <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥903.5</span><span class="t3 ng-binding ng-scope" ng-if="rshop.is_ask_price=='0'&amp;&amp;rshop.tips_id!=0&amp;&amp;rshop.tips_type=='promotion'" style="font-size:12px;">￥1390</span></li>
+                                <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">199</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="sj-r-list ng-scope" ng-repeat="rshop in recshop" style="">
+                            <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=428762"></a>
+                            <ul>
+                                <li class="sj-l-1of6"><img lazy-src="../../images/biovision.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/biovision.png" style="width: 200px;height: 133.33px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                                <li class="sj-l-2of6 ng-binding">GSK2981278</li>
+                                <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">biovision</span></li>
+                                <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span></li>
+                                <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥1048.42</span></li>
+                                <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">198</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="sj-r-list ng-scope" ng-repeat="rshop in recshop" style="">
+                            <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=428762"></a>
+                            <ul>
+                                <li class="sj-l-1of6"><img lazy-src="../../images/mbl.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/mbl.png" style="width: 200px;height: 133.33px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                                <li class="sj-l-2of6 ng-binding">Anti-GPRC5D pAb</li>
+                                <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">MBL</span></li>
+                                <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span></li>
+                                <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥3834.6</span></li>
+                                <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">199</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-rightbox">
+                    <div class="shop-details">
+                        <div class="tit">
+                            <span class="act" spxqtab="">商品详情</span>
+                            <span spxqtab="" class="ng-binding">商品评价（0）</span>
+                        </div>
+                        <!--商品详情-->
+                        <div class="s-d-xq sd" style="overflow: hidden; display: block;">
+                            <div>
+                                 <div class="mc" id="p-con-detail-con">
+                                    <div class="ac" style="height:10px;"></div>
+                                    <table cellpadding="0" cellspacing="0" class="detail-list">
+                                        <caption>概述</caption>
+                                        <tbody><tr>
+                                            <td class="one">货号</td>
+                                            <td class="tow">NBP2-59518-10ug</td>
+                                        </tr>
+                                        </tbody></table>
+                                    <table cellpadding="0" cellspacing="0" class="detail-list">
+                                        <caption>性能</caption>
+                                        <tbody><tr>
+                                            <td class="one">供应商</td>
+                                            <td class="tow">Novus</td>
+                                        </tr>
+                                        </tbody></table>
+                                    <table cellpadding="0" cellspacing="0" class="detail-list">
+                                        <caption>声明</caption>
+                                        <tbody><tr>
+                                            <td class="tow">本官网所有报价均为常温或者蓝冰运输价格，如有产品需要干冰运输，需另外加收干冰运输费。</td>
+                                        </tr>
+                                        </tbody></table>
+                                  </div>
+                            </div>
+                        </div><!--详情end-->
+                        <!--商品评价-->
+                        <div class="s-d-pj sd" hidden="" style="display: none;">
+                            <div class="haopindu clearfix">
+                                <div class="left"><span class="ng-binding">100%</span>好评度</div>
+                                <div class="right">
+                                    <ul>
+                                        <li><label class="ng-binding">好评（0）</label><p><span style="width:NaN%"></span></p></li>
+                                        <li><label class="ng-binding">中评（0）</label><p><span style="width:NaN%"></span></p></li>
+                                        <li><label class="ng-binding">差评（0）</label><p><span style="width:NaN%"></span></p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="pinjia-box">
+                                <div class="tit">
+                                    <span class="act ng-binding" ng-click="evaluate('',1)" tab="">全部评价（0）</span>
+                                    <span ng-click="evaluate('img',1)" tab="" class="ng-binding">晒图（0）</span>
+                                    <span ng-click="evaluate('good',1)" tab="" class="ng-binding">好评（0）</span>
+                                    <span ng-click="evaluate('in',1)" tab="" class="ng-binding">中评（0）</span>
+                                    <span ng-click="evaluate('bad',1)" tab="" class="ng-binding">差评（0）</span></div>
+                                <div class="pinjia-listbox"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="guess-you-like box  mar-t60 ng-scope">
+                <div class="tit">
+                    <h1>猜你喜欢</h1>
+                    <p ng-if="guessyoulikepagenum>1" class="ng-binding ng-scope">1/4
+                        <span ng-click="guessyoulike(guessyoulikepage*1-1*1)">&lt;</span>
+                        <span class="act" ng-click="guessyoulike(guessyoulikepage*1+1*1)">&gt;</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="g-y-l-listbox mar-b80 clearfix">
+                <div class="sj-r-list ng-scope" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                    <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                    <ul>
+                        <li class="sj-l-1of6"><img lazy-src="../../images/Labvision.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope"  src="../../images/Labvision.png" style="width:200px;height: 133.33px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                        <li class="sj-l-2of6 ng-binding" style="font-size: 13px;">Protease XXV for Enzyme-Induce</li>
+                        <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">Labvision</span></li>
+                        <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span></li>
+                        <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥133.7</span></li>
+                        <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">101</a></span></li>
+                    </ul>
+                </div>
+                <div class="sj-r-list ng-scope" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                    <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                    <ul>
+                        <li class="sj-l-1of6"><img lazy-src="../../images/MerckMillipore.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/MerckMillipore.png" style="width:200px;height: 133.33px;background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                        <li class="sj-l-2of6 ng-binding" style="font-size: 13px;">ONIX2 SOFTWARE USB MEMORY STICK</li>
+                        <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">Merck Millipore</span></li>
+                        <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span></li>
+                        <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥225</span></li>
+                        <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">436</a></span></li>
+                    </ul>
+                </div>
+                <div class="sj-r-list ng-scope" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                    <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                    <ul>
+                        <li class="sj-l-1of6"><img lazy-src="../../images/Axygen.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope"  src="../../images/Axygen.png" style="width:200px;height: 133.33px;background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                        <li class="sj-l-2of6 ng-binding" style="font-size: 13px;">384孔微孔板,120μl,透明,50块/箱</li>
+                        <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">Axygen</span></li>
+                        <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span><span class="hui ng-scope" ng-if="rshop.tips_id!=0" style="font-size:10px;">惠</span><span class="zhe ng-binding ng-scope" ng-if="rshop.tips_id!=0" style="font-size:10px;">39折</span></li>
+                        <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥907.94</span><span class="t3 ng-binding ng-scope" ng-if="rshop.is_ask_price=='0'&amp;&amp;rshop.tips_id!=0&amp;&amp;rshop.tips_type=='promotion'" style="font-size:12px;">￥2328.04</span></li>
+                        <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">339</a></span></li>
+                    </ul>
+                </div>
+                <div class="sj-r-list ng-scope" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                    <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                    <ul>
+                        <li class="sj-l-1of6"><img lazy-src="../../images/eppendorf.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/eppendorf.png" style="width:200px;height: 133.33px;background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                        <li class="sj-l-2of6 ng-binding" style="font-size: 13px;">微量离心管3810X, 1.5 ml, 无色,1000个</li>
+                        <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">eppendorf</span></li>
+                        <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span></li>
+                        <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥372.59</span></li>
+                        <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">293</a></span></li>
+                    </ul>
+                </div>
+                <div class="sj-r-list ng-scope" ng-repeat="shop in hs3.goodsRecommendBeans" ng-if="$index<8">
+                    <a style="width:230px;height:350px;position:absolute;top:0px;left:0px;" target="_blank" href="index.html#/shop?shopid=1587663"></a>
+                    <ul>
+                        <li class="sj-l-1of6"><img lazy-src="../../images/RDSystems.png" onerror="this.src='images/zw1.png'" class="ng-isolate-scope" src="../../images/RDSystems.png" style="width:200px;height: 133.33px;background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 1s;"></li>
+                        <li class="sj-l-2of6 ng-binding" style="font-size: 13px;">Cultrex Rat Collagen I, Lower Viscosity (3 MG)</li>
+                        <li class="sj-l-3of6"><span ng-if="shop.brand_name!=''" style="vertical-align:middle;min-width:40px;margin-right:3px;" class="ng-binding ng-scope">R&D Systems</span></li>
+                        <li class="sj-l-4of6" ><span style="font-size:10px;color:#fff;background:#EA2922;line-height:16px;border-radius:2px;height:16px;margin-left:2px;" ng-if="shop.merchants_id == '1'" class="ng-scope">自营</span><span class="hui ng-scope" ng-if="rshop.tips_id!=0" style="font-size:10px;">惠</span><span class="zhe ng-binding ng-scope" ng-if="rshop.tips_id!=0" style="font-size:10px;">65折</span></li>
+                        <li class="sj-l-5of6" style="margin-top:3px;"><span ng-if="shop.is_ask_price=='0'" style="margin-left:0px;font-size:16px;" class="ng-binding ng-scope">￥279.5</span><span class="t3 ng-binding ng-scope" ng-if="rshop.is_ask_price=='0'&amp;&amp;rshop.tips_id!=0&amp;&amp;rshop.tips_type=='promotion'" style="font-size:12px;">￥430</span></li>
+                        <li class="sj-l-6of6" style="bottom:6px;"><span style="font-size:10px;">评价：<a href="javascript:;" class="ng-binding">0</a></span><span style="font-size:10px;">销量：<a href="javascript:;" class="ng-binding">292</a></span></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+</body>
+</html>

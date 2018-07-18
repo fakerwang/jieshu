@@ -1,0 +1,112 @@
+{php}
+$text='添加型号';
+{/php}
+{:widget('base/breadcrumbs',[
+[
+['href'=>url('Screen/screen_list'),'text'=>'大屏列表'],
+['href'=>'','text'=>$text]
+]
+])}
+<div class="page-container">
+    <div id="big"></div>
+    <div id="big2"></div>
+    <form class="form form-horizontal" id="form" method="post">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>型号：</label>
+            <div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+			<select name="screen_class_id" id="seed_class_id" class="select">
+				<option value="">型号</option>
+				<if condition="!empty($re['seed_class'])">
+					{foreach name="screen" item="v"}
+						<option value="{$v.screen_class_id}" {if condition=" $re['screen_class_id'] eq $v['screen_class_id']"}selected{/if}>{$v.model}</option>
+                    {/foreach}
+				</if>
+			</select>
+			</span>
+            </div>
+
+        </div>
+
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>MAC地址：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" name="Mac_address" class="input-text" value="{$re['Mac_address'] ? $re['Mac_address'] : '' }" placeholder="MAC地址" id="Mac_address" />
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>备注：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" name="desc" class="input-text" value="{$re['desc'] ? $re['desc'] : '' }" placeholder="备注" id="desc" />
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                <button  class="submit btn btn-primary radius"  type="button"><i class="Hui-iconfont">&#xe632;</i> 保存并提交</button>
+                <!--<button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存草稿</button>-->
+                <button onClick="javascript:history.back(-1);" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var  content ;
+        KindEditor.ready(function(K) {
+            content = K.create('#content',{
+                allowFileManager : true,
+                uploadJson:"{:url('Tools/upload',['dirname'=>'goods'])}"
+            });
+        });
+
+        KindEditor.ready(function(K) {
+            K.create();
+            var editor = K.editor({
+                allowFileManager : true,
+                uploadJson:"{:url('tools/upload',['dirname'=>'goods'])}"
+                //sdl:false
+            });
+            K('#uparea1').click(function() {
+                console.log(1);
+                editor.loadPlugin('image', function() {
+                    editor.plugin.imageDialog({
+                        imageUrl : K('#image_1').val(),
+                        clickFn : function(url, title, width, height, border, align) {
+                            console.log("{$Think.config.domain}"+url);
+                            $('#image1').css('background-image','url('+url+')').css('background-size','220px 160px');
+                            K('#image_1').val("{$Think.config.domain}"+url);
+                            // K('#getImgUrl').val(url);
+                            editor.hideDialog();
+                        }
+                    });
+                });
+            });
+
+        });
+
+        $(".submit").click(function(){
+            commonAjaxSubmit('','form');
+            return false;
+        });
+
+        $("#uparea1").mouseover(function(e){
+            $("#big").css({top:e.pageY,right:e.pageX});//鼠标定位一个点
+            var img = $('#image_1').val();
+            if(img.length !== 0) {
+                $("#big").html('<img src="' + $('#image_1').val() + '" width=380 height=300>');
+                $("#big").show();        //show：显示
+            }
+        });
+        $("#uparea1").mouseout(function(){
+            $("#big").hide();
+        });
+
+
+        $('.skin-minimal input').iCheck({
+            checkboxClass: 'icheckbox-blue',
+            radioClass: 'iradio-blue',
+            increaseArea: '20%'
+        });
+    });
+
+
+</script>
