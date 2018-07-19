@@ -12,8 +12,8 @@ use WeChat\Jssdk;
 
 class Login_1 extends Common
 {
-    private $cdkey = "8SDK-EMY-6699-RHRPN";
-    private $password = "647039";
+    private $cdkey = "";
+    private $password = "";
     protected $system = array();
     public function _initialize()
     {
@@ -27,9 +27,9 @@ class Login_1 extends Common
      */
     protected  function zhutong_sendSMS($content,$mobile){
         //$url 		= "http://api.zthysms.com/sendSms.do";//提交地址
-        $url 		= "http://www.ztsms.cn/sendNSms.do";//提交地址
-        $username 	= "ZATest";//用户名
-        $password 	= "Zhengan88";//原密码
+        $url 		= "http://www.ztsms.cn/sendNSms.do123";//提交地址
+        $username 	= "ZATest1";//用户名
+        $password 	= "Zhengan888";//原密码
         // 初始化
         vendor('zhutong.zhutong');
         $data = array(
