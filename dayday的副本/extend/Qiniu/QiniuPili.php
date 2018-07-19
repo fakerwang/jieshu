@@ -29,11 +29,11 @@ class  QiniuPili{
     public function __construct($options = [])
     {
         $options= [
-            'ak' => 'pR_CsEkFcTn1Kgf8ZNIh2zUB_w8bzaeLYEgjBItT',
-            'sk' => 'Vr2R_DMBvVHAtVmcwVGKF_C-ol6jDtCXqpiXlZZY',
-            'hubName'=>'vxiu1',
-            'publishurl'=>'fanlilive.tstmobile.com',
-            'playurl'=>'fanlilive.tstmobile.com'
+            'ak' => '',
+            'sk' => '',
+            'hubName'=>'',
+            'publishurl'=>'',
+            'playurl'=>''
 
         ];
         $this->ak = isset($options["ak"]) ? $options["ak"] : '';
